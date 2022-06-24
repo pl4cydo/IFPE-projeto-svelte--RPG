@@ -1,3 +1,8 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
 #main {
 	background: #44A08D;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #093637, #44A08D);  /* Chrome 10-25, Safari 5.1-6 */
@@ -27,6 +32,7 @@
 	width: 700px; 
 	background-color: whitesmoke;
 	border-radius: 5px;
+	box-shadow: 3px 3px 3px black;
 }
 
 #topRow {
@@ -38,6 +44,8 @@
 	margin: 15px;
 	display: flex;
 	justify-content: center;
+	box-shadow: 3px 3px 3px black;
+
 
 }
 
@@ -69,6 +77,7 @@
 	border-color: darkblue;
 */	margin: 5px;
 	font: 12pt Arial;
+	visibility: hidden;
 
 }
 
@@ -118,6 +127,7 @@
 	margin: 10px;
 	margin: 5px;
 	font: 12pt Arial;
+	visibility: hidden;
 }
 
 #lifebs {
@@ -138,6 +148,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+
 }
 
 #bottonRow1 {
@@ -149,14 +160,17 @@
 	margin-top: 5px;
 	margin: 10px;
 	background-color: #E0E0E0;
+	box-shadow: 3px 3px 3px black;
 
 }
 
 #bottonRow1 p {
-	margin-left: 50px;
+	margin-left: 35px;
+	font: 15pt message-box; 
+	
 }
 
-#bottonRow1 button {
+/*#bottonRow1 button {
 	margin-left: 80px;
 	background-color: #A9A9A9;
 	border: 2px solid;
@@ -169,7 +183,7 @@
 	background-color: black;
     color: white;
 }
-
+*/
 
 #bottonRow2 {
 	/*border: 1px solid;
@@ -179,15 +193,22 @@
 	width: 380px;
 	margin-top: 5px;
 	margin: 5px;
-	visibility: visible;
+	visibility: hidden;
+	box-shadow: 3px 3px 3px black;
 }
 
 #bottonRow2 p {
-	margin-top: 1px;
+	margin-top: 10px;
 	margin-bottom: -20px;
 	margin-left: 10px;
+	font: 15pt message-box; 
 }
 
+#movimentos{
+	display: inline-flex;
+	margin-left: -100px;
+	
+}
 #bottonRow2 button {
 	margin-left: 150px;
 	background-color: #A9A9A9;

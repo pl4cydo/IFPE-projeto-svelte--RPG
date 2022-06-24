@@ -3,7 +3,9 @@
 </svelte:head>
 
 <script >
-	import { comecarBatalha } from './inicioBatalha.js'
+	import BotaoComecar from "./Components/BotaoComecar.svelte"
+	import BotaoMurro from "./Components/BotaoMurro.svelte"
+	// import { comecar } from "./Components/BotaoComecar.svelte"
 </script>
 
 <main id="main">
@@ -47,12 +49,15 @@
 			<div id="botton">
 				<div id="bottonRow1">
 					<p>Let's battle begins!</p>
-					<button class="inicio" on:click{comecarBatalha()}>Começar</button>
+					<!-- <button class="inicio" on:click{comecarBatalha()}>Começar</button> -->
+					<BotaoComecar Texto='Começar!'/>
 				</div>
 				<div id="bottonRow2">
 					<p> Movimentos:</p><br>
-					<button>Murro</button>
+					<div id="movimentos">
+					<BotaoMurro/>
 					<button>Power!</button>
+					</div>
 				</div>
 			</div>
 

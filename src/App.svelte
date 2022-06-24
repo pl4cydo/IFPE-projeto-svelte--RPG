@@ -1,5 +1,5 @@
 <script>
-	import Batalha from './batalha.svelte'
+	import Batalha from "./Batalha.svelte";
 </script>
 
 
