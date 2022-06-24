@@ -2,6 +2,10 @@
 	<link rel="stylesheet" href="styles/batalha.css">
 </svelte:head>
 
+<script >
+	import { comecarBatalha } from './inicioBatalha.js'
+</script>
+
 <main id="main">
 	<div id="container">
 		<div id="bloco1">
@@ -41,9 +45,12 @@
 
 			<!-- Parte de baixo da tela -->
 			<div id="botton">
-				<div id="bottonRow1"><p>Let's battle begins!</p></div>
+				<div id="bottonRow1">
+					<p>Let's battle begins!</p>
+					<button onclick="comecarBatalha()" class="inicio">Começar</button>
+				</div>
 				<div id="bottonRow2">
-					<span class="Texto"> Movimentos</span><br>
+					<p> Movimentos:</p><br>
 					<button>Murro</button>
 					<button>Power!</button>
 				</div>
@@ -52,7 +59,3 @@
 		</div>
 	</div>
 </main>
-
-<script type="text/javascript">
-	import svelte from inicio_de_batalha
-</script>

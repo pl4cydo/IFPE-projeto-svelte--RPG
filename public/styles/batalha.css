@@ -152,13 +152,52 @@
 
 }
 
+#bottonRow1 p {
+	margin-left: 50px;
+}
+
+#bottonRow1 button {
+	margin-left: 80px;
+	background-color: #A9A9A9;
+	border: 2px solid;
+	border-color: black;
+	border-radius: 3px;
+	font-weight:bold;
+}
+
+#bottonRow1 button:hover {
+	background-color: black;
+    color: white;
+}
+
+
 #bottonRow2 {
 	/*border: 1px solid;
 	border-color: green;*/
+	background-color: #E0E0E0;
 	height: 160px;
 	width: 380px;
 	margin-top: 5px;
 	margin: 5px;
-
+	visibility: visible;
 }
 
+#bottonRow2 p {
+	margin-top: 1px;
+	margin-bottom: -20px;
+	margin-left: 10px;
+}
+
+#bottonRow2 button {
+	margin-left: 150px;
+	background-color: #A9A9A9;
+	border: 2px solid;
+	border-color: black;
+	border-radius: 3px;
+	font-weight:bold;
+}
+
+#bottonRow2 button:hover {
+	background-color: black;
+    color: white;
+}
