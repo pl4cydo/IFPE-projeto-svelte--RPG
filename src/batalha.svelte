@@ -47,7 +47,7 @@
 			<div id="botton">
 				<div id="bottonRow1">
 					<p>Let's battle begins!</p>
-					<button onclick="comecarBatalha()" class="inicio">Começar</button>
+					<button class="inicio" on:click{comecarBatalha()}>Começar</button>
 				</div>
 				<div id="bottonRow2">
 					<p> Movimentos:</p><br>
