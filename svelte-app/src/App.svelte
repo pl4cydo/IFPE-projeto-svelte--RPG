@@ -6,6 +6,6 @@
 
 </script>
 	
-	<Mapa/>
-	<!-- <Menu/>
-	<Batalha/> -->
+	<!-- <Mapa/> -->
+	<!-- <Menu/> -->
+	<Batalha/>

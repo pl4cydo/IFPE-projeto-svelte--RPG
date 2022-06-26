@@ -14,6 +14,8 @@
 	<div class="container">
 		<img src="./images/backgound.png" class="fundo">
 		<canvas id="canvas" height="300" width="1000"></canvas>
+		<img class="castelo" src="./images/castelo.png">
+		<img class="player" src="./images/player.png">
 	</div>
 </main>
 
@@ -23,16 +25,28 @@
 		height: 100hv;
 		display: flex;
 		justify-content: center;
-		margin-top: 320px;
+		margin-top: 300px;
 	}
 	.fundo {
 		height: 300px;
 		width: 1000px;
 		position: relative;
 	}
-	
 	#canvas {
 		outline: 1px solid #000;
 		position: absolute;
+	}
+	.castelo {
+		margin-top: 180px;
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+	.player {
+		margin-top: 180px;
+		margin-left: -900px;
+		position: absolute;
+		width: 100px;
+		height: 100px;
 	}
 </style>

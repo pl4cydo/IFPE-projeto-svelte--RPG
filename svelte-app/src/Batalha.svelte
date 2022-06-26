@@ -1,20 +1,21 @@
 <script type="text/javascript">
 	import Personagens from "./Contents/Personagens.svelte"
+	import Boss from "./Contents/Boss.svelte"
+	// import {dale} from "./Contents/Personagens.svelte"
 </script>
 
 <main>
 	<div class="container">
 		<div class="principal">
 			<div class="topRow">
-				<Personagens/>
+				<Boss/>
 				<Personagens/>
 			</div>
 			<div class="bottonRow">
-				<div class="inimigos"></div>
+				<div class="menu">
+					
+				</div>
 				<div class="personagens">
-					<li class="lista"></li>
-					<li class="lista"></li>
-					<li class="lista"></li>
 				</div>
 				<div class="movimentos"></div>
 			</div>
@@ -67,7 +68,7 @@
 		margin-left: 4px;
 		display: flex;
 	}
-	.inimigos {
+	.menu {
 		border: 1px solid;
 		border-color: darkred;
 		width: 30%;
