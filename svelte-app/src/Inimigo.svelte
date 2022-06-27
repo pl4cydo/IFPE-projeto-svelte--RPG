@@ -1,7 +1,9 @@
 
 <script type="text/javascript">
-
-	
+	function ataquemessiah() {
+		
+	}
+ 	
 </script>
 
 <div class="bloco">
@@ -9,7 +11,7 @@
 		<p class="nome">MESSAIAH</p>
 		<p class="nome">HP:</p>
 		<div class="contorno">
-			<div class="vida"></div>
+			<div  id="barraVidaMessiah"></div>
 		</div>
 	</div>
 	<div class="personagem">
@@ -58,7 +60,7 @@
 		height: 30px;
 		border: 3px solid black;
 	}
-	.vida {
+	#barraVidaMessiah {
 		width: 194px;
 		height: 30px;
 		background-color: green;

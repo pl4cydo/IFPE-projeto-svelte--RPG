@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export let vidaMessiah = writable("100");
+export const vidaMessiah = writable(100);

@@ -1,17 +1,21 @@
 <script type="text/javascript">
 	import { vidaMessiah } from "./vidamessiah.js"
+
+	let vidaBoss
+	vidaMessiah.subscribe((value) => {
+		vidaBoss = value
+	})
+
 	function murro() {
-		// console.log(a)
-		// let acerto = Math.round(Math.random()*10)
-		// 	if (acerto > 5) {
-		// 		let dano = Math.round(Math.random()*10) + 10
-		// 		vidaMessia -= dano
-		// 		inf.innerHTML = vidaMessia
-		// 		console.log(vidaMessia)
-		// 	} else {
-				inf.innerHTML = vidaMessiah
-		// 		console.log("errou")
-		// 	}
+		let acerto = Math.round(Math.random()*10)
+		if (acerto > 5) {
+			let dano = Math.round(Math.random()*10) + 10
+		 		vidaBoss -= dano
+		 		inf.innerHTML = vidaBoss
+		 		barraVidaMessiah.style.width = vidaBoss + "px"
+		} else {
+			inf.innerHTML = "errou" + vidaBoss
+		}
 	}
 </script>
 
