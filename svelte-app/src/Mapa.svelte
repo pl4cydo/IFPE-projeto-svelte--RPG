@@ -1,10 +1,10 @@
 <script type="text/javascript">
 	
-	var canvas = document.querySelector('#canvas');
+	// var canvas = document.querySelector('#canvas');
 	// var context = canvas.getContext('2d');
 
-	var xPos = 0;
-	var yPos = 0;
+	// var xPos = 0;
+	// var yPos = 0;
 
 	// canvas.react(xPos, yPos, 50, 50)
 	

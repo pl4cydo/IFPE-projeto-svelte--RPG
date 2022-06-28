@@ -1,6 +1,7 @@
 <script type="text/javascript">
-	import Personagem from "./Personagem.svelte"
-	import Inimigo from "./Inimigo.svelte"
+	import Personagem from "./Contents/Personagem.svelte"
+	import Inimigo from "./Contents/Inimigo.svelte"
+	import { iniciarMessiah } from "./Contents/Inimigo.svelte"
 </script>
 
 <main>
@@ -9,6 +10,7 @@
 			<div class="topRow">
 				<Inimigo/>
 				<Personagem/>
+				<div id="InicioBatalha" > Iniciar </div>
 			</div>
 			<div class="bottonRow">
 			</div>
@@ -61,29 +63,15 @@
 		margin-left: 4px;
 		display: flex;
 	}
-/*	.menu {
-		border: 1px solid;
-		border-color: darkred;
-		width: 30%;
-		height: 185px;
-		margin: 4px;
-		margin-left: 4px;
+	#InicioBatalha {
+		border: 1px solid black;
+		width: 150px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		margin-left: 370px;
+		margin-top: 200px;
 	}
-	.personagens {
-		border: 1px solid;
-		border-color: cyan;
-		width: 30%;
-		height: 185px;
-		margin: 4px;
-		margin-left: 4px;
-	}
-	.movimentos {
-		border: 1px solid;
-		border-color: darkcyan;
-		width: 40%;
-		height: 185px;
-		margin: 4px;
-		margin-left: 4px;
-	}*/
-	
 </style>

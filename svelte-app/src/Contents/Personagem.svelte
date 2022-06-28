@@ -1,22 +1,33 @@
 <script type="text/javascript">
 	import { vidaMessiah } from "./vidamessiah.js"
 
+
 	let vidaBoss
 	vidaMessiah.subscribe((value) => {
 		vidaBoss = value
 	})
 
+	var dano;
 	function murro() {
 		let acerto = Math.round(Math.random()*10)
 		if (acerto > 5) {
-			let dano = Math.round(Math.random()*10) + 10
+			dano = Math.round(Math.random()*10) + 10
 		 		vidaBoss -= dano
-		 		inf.innerHTML = vidaBoss
+		 		// let danoPorcento = (vidaBoss/100)*240;
+		 		inf.innerHTML = "Murro"
 		 		barraVidaMessiah.style.width = vidaBoss + "px"
-		} else {
-			inf.innerHTML = "errou" + vidaBoss
+		} else if  (acerto < 5){
+			inf.innerHTML = "errou"
 		}
+		increment()
 	}
+
+	function increment() {
+		vidaMessiah.update((value) => {
+			return value - dano
+		})
+	}
+
 </script>
 
 <div class="bloco">
@@ -31,8 +42,10 @@
 		</div>
 	</div>
 	<div class="bottonIformacao">
-		<button on:click={() => murro()}>Murro</button>
-		<p id="inf2">nn</p>
+		<!-- <p id="inf2">nn</p> -->
+		<div class="divAtaques" on:click={() => murro()}>Murro</div>
+		<div class="divAtaques">Ataque2</div>
+		<div class="divAtaques">Ataque3</div>
 	</div>
 </div>
 
@@ -88,5 +101,15 @@
 	}
 	.nome {
 		margin: 5px;
+	}
+	.divAtaques {
+		border: 1px solid black;
+		width: 150px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		margin-left: 270px;
 	}
 </style>

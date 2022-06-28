@@ -1,5 +1,7 @@
 <script type="text/javascript">
 	
+	import { estado } from './Estado.js'
+	import { trocarEstadoDoJogo } from './Estado.js'
 </script>
 
 <main>
@@ -9,14 +11,14 @@
 				<h1>FINAL<br>IFPE</h1>
 				<h3>Uma Jornada Esperada</h3>
 			</div>
-			<div class="jogar">
+			<div class="jogar" on:click={() => trocarEstadoDoJogo('jogar')}>
 				<h1>JOGAR</h1>
 			</div>
 			<div class="ajuda">
 				<h1>AJUDA</h1>
 			</div>
-			<div class="sobre">
-				<h1>SOBRE</h1>
+			<div class="sobre" on:click={() => trocarEstadoDoJogo('sobre')}>
+				<h1>MAPA</h1>
 			</div>
 			<div class="projeto">
 				<h1>Demo Weak 2022.1</h1>
