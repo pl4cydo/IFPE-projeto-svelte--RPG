@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+* {
+
+    font-size: 1em;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+body {
+    font-size: 1em;
+    background-image: linear-gradient(to top, #349A3F, #349A3F);
+    text-align: center;
+}
+
+
+header {
+    background-color: white;
+    
+    border-radius: 25px;
+    border: 10px groove #349A3F;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+
+    width: 600;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+
+}
+
+footer {
+    font-size: 0.50em;
+    box-shadow: 5px 5px 5px #349A3F;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* main {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+} */ 
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: white;
+    height: auto;
+    width: auto;
+
+    border-radius: 25px;
+    border: 8px groove #349A3F;
+
+    padding: 10px;
+
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+
+}
