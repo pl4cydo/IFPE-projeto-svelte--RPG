@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	
-	import { estado } from './Estado.js'
-	import { trocarEstadoDoJogo } from './Estado.js'
+	import { estado } from './Contents/Estado.js'
+	import { trocarEstadoDoJogo } from './Contents/Estado.js'
 </script>
 
 <main>

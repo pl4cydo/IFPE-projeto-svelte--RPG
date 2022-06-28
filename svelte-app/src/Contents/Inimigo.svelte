@@ -1,37 +1,57 @@
 
 <script type="text/javascript">
-	import { vidaMessiah } from "./vidamessiah.js"
+	import { vidaMessiah } from "./Vida.js"
+	import { vidaEstudante } from "./Vida.js"
+	import { trocarEstadoDoJogo } from './Estado.js'
+
+	let vidaAluno1;
+	vidaEstudante.subscribe((value) => {
+		vidaAluno1 = value
+	})
 
 	let vidaBoss1
 	vidaMessiah.subscribe((value) => {
 		vidaBoss1 = value
 	})
-	export function iniciarMessiah() {
-		bottonIformacao.style.visibility = "visible"
-	}
+	// export function iniciarMessiah() {
+	// 	bottonIformacao.style.visibility = "visible"
+	// }
 
-	function ataqueMessiah() {
-		let ataqueMessiahAleatorio = Math.round(Math.random()*1)
-		if (ataqueMessiahAleatorio == 0) {
-			corteVerba()
-		} else {
-			paoComLeiteCondensado()
-		}
+	// export function ataqueMessiah() {
+	// 	let ataqueMessiahAleatorio = Math.round(Math.random()*1)
+	// 	if (ataqueMessiahAleatorio == 0) {
+	// 		corteVerba()
+	// 	} else {
+	// 		paoComLeiteCondensado()
+	// 	}
 		
-		console.log(ataqueMessiahAleatorio)
-	}
+	// 	console.log(ataqueMessiahAleatorio)
+	// }
+	var danoMessiah;
 	function corteVerba() {
-		// taque cortante que dá dano
-		// let acertoMessiah = Math.round(Math.random())
-		console.log('corteVerba')
-	}
-	function paoComLeiteCondensado() {
-		console.log('paoComLeiteCondensado')
-		let acertoLeiteCondensado = Math.round(Math.random()*10)
-		if (acertoLeiteCondensado >= 0) {
+		if (vidaAluno1 < 0) {
+			trocarEstadoDoJogo('sobre')
+		}
+		let acertoMessiah = Math.round(Math.random()*20);
+		if (acertoMessiah > 10) {
+			danoMessiah = Math.round(Math.random()*30) + 10
+			vidaAluno1 -= danoMessiah
+			vidaEstudante3.style.width = vidaAluno1 + "px"
+			inf.innerHTML = "Ataque Corte de Verba!"
+		} else {
+			inf.innerHTML = "O STF bloqueou o ataque, Messiah está impedido!"
+		}
 
-		} 
+
+		
 	}
+	// function paoComLeiteCondensado() {
+	// 	console.log('paoComLeiteCondensado')
+	// 	let acertoLeiteCondensado = Math.round(Math.random()*10)
+	// 	if (acertoLeiteCondensado >= 0) {
+
+	// 	} 
+	// }
 	// ataque VAGABUNDO
 	
  	
@@ -49,7 +69,7 @@
 		<img src="./images/boss_semfundo.png">
 	</div>
 	<div id="bottonIformacao">
-		<div id="ataqueMessiah" on:click={() => ataqueMessiah()}> Test Ataque</div>
+		<div id="ataqueMessiah" on:click={() => corteVerba()}> Test Ataque</div>
 		<p id="inf"></p>
 	</div>
 </div>
@@ -106,7 +126,7 @@
 		width: 440px;
 		height: 190px;
 		margin-top: 396px;
-		visibility: hidden;
+	/*	visibility: hidden;*/
 	}
 	#ataqueMessiah {
 		border: 1px solid black;

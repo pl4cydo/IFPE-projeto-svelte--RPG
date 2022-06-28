@@ -1,22 +1,28 @@
 <script type="text/javascript">
-	import { vidaMessiah } from "./vidamessiah.js"
+	import { vidaMessiah } from "./Vida.js"
+	import { vidaEstudante } from "./Vida.js"
+
+	let vidaAluno;
+	vidaEstudante.subscribe((value) => {
+		vidaAluno = value
+	})
 
 
-	let vidaBoss
+	let vidaBoss;
 	vidaMessiah.subscribe((value) => {
 		vidaBoss = value
 	})
 
-	var dano;
+	var danoEstudante;
 	function murro() {
 		let acerto = Math.round(Math.random()*10)
-		if (acerto > 5) {
-			dano = Math.round(Math.random()*10) + 10
-		 		vidaBoss -= dano
+		if (acerto > 0) {
+			danoEstudante = Math.round(Math.random()*10) + 10
+		 		vidaBoss -= danoEstudante
 		 		// let danoPorcento = (vidaBoss/100)*240;
-		 		inf.innerHTML = "Murro"
+		 		inf.innerHTML = "Murro" 
 		 		barraVidaMessiah.style.width = vidaBoss + "px"
-		} else if  (acerto < 5){
+		} else {
 			inf.innerHTML = "errou"
 		}
 		increment()
@@ -24,7 +30,7 @@
 
 	function increment() {
 		vidaMessiah.update((value) => {
-			return value - dano
+			return value - danoEstudante
 		})
 	}
 
@@ -36,9 +42,9 @@
 	</div>
 	<div class="barraInformacoes">
 		<p class="nome">EstudanteIFPE</p>
-		<p class="nome">HP:</p>
+		<p class="nome">HP: {vidaAluno}</p>
 		<div class="contorno">
-			<div class="vidaEstudante"></div>
+			<div id="vidaEstudante3"></div>
 		</div>
 	</div>
 	<div class="bottonIformacao">
@@ -87,7 +93,7 @@
 		height: 30px;
 		border: 3px solid black;
 	}
-	.vidaEstudante {
+	#vidaEstudante3 {
 		width: 194px;
 		height: 30px;
 		background-color: green;

@@ -3,19 +3,19 @@
 	import Mapa from "./Mapa.svelte"
 	import Batalha from "./Batalha.svelte"
 
-	import { estado } from './Estado.js'
+	import { estado } from './Contents/Estado.js'
 
 </script>
 
 
 <!-- <Menu/> -->
 <!-- <Mapa/> -->
-<Batalha/>
-<!-- 
+<!-- <Batalha/> -->
+
 {#if $estado === 'menu'}
 	<Menu/>
 {:else if $estado === 'sobre'}
 	<Mapa/>
 {:else if $estado === 'jogar'}
 	<Batalha/>
-{/if} -->
+{/if}

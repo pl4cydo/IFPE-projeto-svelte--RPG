@@ -1,7 +1,8 @@
 <script type="text/javascript">
 	import Personagem from "./Contents/Personagem.svelte"
 	import Inimigo from "./Contents/Inimigo.svelte"
-	import { iniciarMessiah } from "./Contents/Inimigo.svelte"
+	
+	
 </script>
 
 <main>
@@ -73,5 +74,6 @@
 		position: absolute;
 		margin-left: 370px;
 		margin-top: 200px;
+		visibility: hidden;
 	}
 </style>
