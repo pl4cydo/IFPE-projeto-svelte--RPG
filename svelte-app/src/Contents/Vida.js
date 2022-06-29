@@ -1,5 +1,17 @@
 import { writable } from 'svelte/store';
 
-export const vidaMessiah = writable(194);
+export let Bus = writable({
+	nome: "Igarassu Circular (Botafogo)",
+	vidabus: 194,
+	baseAcerto: 10,
+	ataque: 10,
+	def: 10
+});
 
-export const vidaEstudante = writable(194);
+export let Estudante = writable({
+	nome: "EstudanteIFPE",
+	vida: 194,
+	baseAcerto: 15, 
+	ataque: 5,
+	def: 13
+});
