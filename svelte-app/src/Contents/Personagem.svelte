@@ -28,10 +28,12 @@
 		if (acerto >= $Estudante.def) {
 			let dano = Math.round(Math.random()*12) + $Bus.ataque
 			$Estudante.vida -= dano
-			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
+			setTimeout(function(){
+    			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
+			},2000);
 			setTimeout(function(){
     			vidaEstudante3.style.width = $Estudante.vida + "px"
-			},2000);
+			},4000);
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Errou!"
@@ -41,8 +43,11 @@
 			fimBus()
 		}
 		setTimeout(function(){
-    		bottonIformacao.style.visibility = "visible"
+    		inf.innerHTML = "Fim do turno"
 		},5000);
+		setTimeout(function(){
+    		bottonIformacao.style.visibility = "visible"
+		},6000);
 
 	}
 	function queimarParada() {
@@ -50,10 +55,12 @@
 		if (acerto >= $Estudante.def) {
 			let dano = Math.round(Math.random()*12) + $Bus.ataque + 10
 			$Estudante.vida -= dano
-			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
+			setTimeout(function(){
+    			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
+			},2000);
 			setTimeout(function(){
     			vidaEstudante3.style.width = $Estudante.vida + "px"
-			},2000);
+			},4000);
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Errou!"
@@ -63,8 +70,11 @@
 			fimBus()
 		}
 		setTimeout(function(){
-    		bottonIformacao.style.visibility = "visible"
+    		inf.innerHTML = "Fim do turno"
 		},5000);
+		setTimeout(function(){
+    		bottonIformacao.style.visibility = "visible"
+		},6000);
 
 	}
 
@@ -86,22 +96,27 @@
 		if (acerto >= $Bus.def){
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque;
 			$Bus.vidabus -= dano;
-			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+			setTimeout(function(){
+    			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+			},4000);
 			setTimeout(function(){
     			barraVidaBus.style.width = $Bus.vidabus + "px"
-			},3000);
+			},5000);
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " errou o ataque!"
-			},3000);
+			},4000);
 		}
 		if ($Bus.vidabus <= 0) {
 			imagemBus.style.transform = "rotate(180deg)"
 			fim()
 		}
 		setTimeout(function(){
+    		inf.innerHTML = "Fim do turno"
+		},8000);
+		setTimeout(function(){
     		ataqueAleatorio()
-		},5000);
+		},12000);
 		bottonIformacao.style.visibility = "hidden"
 	}
 
@@ -128,7 +143,7 @@
 		<img id="imagemBus" src="./images/bus1.png"/>
 	</div>
 	<div id="bottonIformacao2">
-		<p id="inf">O {$Bus.nome} pareceu, lute para conseguir subir no ônibus.</p>
+		<p id="inf">O {$Bus.nome} apareceu, lute para conseguir subir no ônibus.</p>
 	</div>
 </div>
 

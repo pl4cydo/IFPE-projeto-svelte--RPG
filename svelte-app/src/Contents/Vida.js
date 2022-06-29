@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export let Bus = writable({
 	nome: "Igarassu Circular (Botafogo)",
 	vidabus: 194,
-	baseAcerto: 8,
+	baseAcerto: 10,
 	ataque: 10,
 	def: 10
 });
