@@ -3,20 +3,68 @@
 	import { Bus } from "./Vida.js"
 
 
+
+
 	// ************************ BUS ************************
+
+	function ataqueAleatorio() {
+		let aleatorio = Math.round(Math.random()*10)
+		if (aleatorio < 8) {
+			inf.innerHTML = $Bus.nome + " Tentou atacar com Arranque "
+			setTimeout(function(){
+				arranque()
+			},2000);
+		} else {
+			inf.innerHTML = $Bus.nome + " Tentou Queimar a Parada "
+			setTimeout(function(){
+				queimarParada()	
+			},2000); 
+		}
+
+	}
+
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
 			let dano = Math.round(Math.random()*12) + $Bus.ataque
 			$Estudante.vida -= dano
 			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
-			vidaEstudante3.style.width = $Estudante.vida + "px"
+			setTimeout(function(){
+    			vidaEstudante3.style.width = $Estudante.vida + "px"
+			},2000);
 		} else {
-			inf.innerHTML = $Bus.nome + " Errou!"
+			setTimeout(function(){
+    			inf.innerHTML = $Bus.nome + " Errou!"
+			},2000);
 		}
 		if ($Estudante.vida <= 0) {
 			fimBus()
 		}
+		setTimeout(function(){
+    		bottonIformacao.style.visibility = "visible"
+		},5000);
+
+	}
+	function queimarParada() {
+		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
+		if (acerto >= $Estudante.def) {
+			let dano = Math.round(Math.random()*12) + $Bus.ataque + 10
+			$Estudante.vida -= dano
+			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
+			setTimeout(function(){
+    			vidaEstudante3.style.width = $Estudante.vida + "px"
+			},2000);
+		} else {
+			setTimeout(function(){
+    			inf.innerHTML = $Bus.nome + " Errou!"
+			},2000);
+		}
+		if ($Estudante.vida <= 0) {
+			fimBus()
+		}
+		setTimeout(function(){
+    		bottonIformacao.style.visibility = "visible"
+		},5000);
 
 	}
 
@@ -33,19 +81,28 @@
 	
 
 	function murro() {
+		inf.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Bus.def){
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque;
 			$Bus.vidabus -= dano;
-			inf.innerHTML = $Estudante.nome + " Acertou um murro com " + dano + " de dano"
-			barraVidaBus.style.width = $Bus.vidabus + "px"
+			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+			setTimeout(function(){
+    			barraVidaBus.style.width = $Bus.vidabus + "px"
+			},3000);
 		} else {
-			inf.innerHTML = $Estudante.nome + " errou o ataque!"
+			setTimeout(function(){
+    			inf.innerHTML = $Estudante.nome + " errou o ataque!"
+			},3000);
 		}
 		if ($Bus.vidabus <= 0) {
 			imagemBus.style.transform = "rotate(180deg)"
 			fim()
 		}
+		setTimeout(function(){
+    		ataqueAleatorio()
+		},5000);
+		bottonIformacao.style.visibility = "hidden"
 	}
 
 	function fim() {
@@ -57,12 +114,13 @@
 
 
 </script>
+
 <!-- ************************ BUS ************************ -->
 <div class="bloco">
 	<div id="barraInformacoesBus">
-		<p class="nome">Circular (Botafogo)</p>
-		<p class="nome">HP:{$Bus.vidabus}</p>
-		<div class="contorno">
+		<p class="nomeBus">{$Bus.nome}</p>
+		<p class="nomeBus">HP:{$Bus.vidabus}</p>
+		<div class="contornoBus">
 			<div  id="barraVidaBus"></div>
 		</div>	
 	</div>
@@ -70,8 +128,7 @@
 		<img id="imagemBus" src="./images/bus1.png"/>
 	</div>
 	<div id="bottonIformacao2">
-		<div id="ataqueMessiah" on:click={() => arranque()}> Test Ataque</div>
-		<p id="inf"></p>
+		<p id="inf">O {$Bus.nome} pareceu, lute para conseguir subir no ônibus.</p>
 	</div>
 </div>
 
@@ -91,151 +148,14 @@
 	</div>
 	<div id="bottonIformacao">
 		<!-- <p id="inf2">nn</p> -->
+		<ul id="listaStatus">
+			<li>Nome: {$Estudante.nome}</li>
+			<li>Proeficiência: D20 + {$Estudante.baseAcerto}</li>
+			<li>Ataque: D10 + {$Estudante.ataque}</li>
+			<li>Defesa: {$Estudante.def}</li>
+		</ul>
 		<div class="divAtaques" on:click={() => murro()}>Murro</div>
 		<div class="divAtaques">Ataque2</div>
 		<div class="divAtaques">Ataque3</div>
 	</div>
 </div>
-
-
-<style type="text/css">
-	/************************* BUSS ************************ */
-.bloco {
-		width: 445px;
-		height: 390px;
-		border: 1px solid;
-		border-color: black;
-		display: flex;
-		position: relative;
-	}
-	.personagemBus {
-		border: 1px solid black;
-		margin: 3px;
-		width: 500px;
-		height: 200px;
-		margin-top: 185px;
-		margin-left: 10px;
-		position: absolute;
-		overflow: hidden;
-	}
-	.personagemBus img {
-		/*width: 150%;*/
-		height: 300%;
-		margin-top: -200px;
-		margin-left: -50px;
-		transform: scaleX(-1);
-	}
-
-	#imagemBus {
-
-	}
-	#barraInformacoesBus {
-		border: 1px solid black;
-		margin: 3px;
-		width: 200px;
-		height: 380px;
-		margin: 4px;
-		margin-left: 10px;
-		position: absolute;
-		visibility: hidden;
-	}
-	.contorno {
-		width: 194px;
-		height: 30px;
-		border: 3px solid black;
-	}
-	#barraVidaBus {
-		width: 194px;
-		height: 30px;
-		background-color: green;
-	}
-	.nome {
-		margin: 5px;
-	}
-	#bottonIformacao2 {
-		border: 1px solid;
-		border-color: darkcyan;
-		width: 440px;
-		height: 190px;
-		margin-top: 396px;
-	/*	visibility: hidden;*/
-	}
-	#ataqueMessiah {
-		border: 1px solid black;
-		width: 100px;
-		height: 40px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-
-
-
-
-
-/************************* ESTUDANTE IFPE ************************ */
-	.bloco {
-		width: 445px;
-		height: 390px;
-		border: 1px solid;
-		border-color: black;
-		display: flex;
-		position: relative;
-	}
-	.personagem {
-		border: 1px solid black;
-		margin: 3px;
-		width: 150px;
-		height: 150px;
-		margin-top: 234px;
-		margin-left: 100px;
-		position: absolute;
-	}
-	.personagem img {
-		width: 100%;
-		height: 100%;
-		transform: scaleX(-1);
-	}
-	#barraInformacoes {
-		border: 1px solid black;
-		margin: 3px;
-		width: 200px;
-		height: 380px;
-		margin: 4px;
-		margin-left: 230px;
-		position: absolute;
-		visibility: hidden;
-	}
-	.contorno {
-		width: 194px;
-		height: 30px;
-		border: 3px solid black;
-	}
-	#vidaEstudante3 {
-		width: 194px;
-		height: 30px;
-		background-color: green;
-	}
-	#bottonIformacao {
-		border: 1px solid;
-		border-color: darkcyan;
-		width: 440px;
-		height: 190px;
-		margin-top: 396px;
-		visibility: hidden;
-	}
-	.nome {
-		margin: 5px;
-	}
-	.divAtaques {
-		border: 1px solid black;
-		width: 150px;
-		height: 40px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 10px;
-		margin-left: 270px;
-	}
-</style>

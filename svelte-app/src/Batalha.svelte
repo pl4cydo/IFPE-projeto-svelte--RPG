@@ -8,6 +8,7 @@
 		bottonIformacao.style.visibility = "visible"
 		barraInformacoesBus.style.visibility = "visible"
 		InicioBatalha.style.visibility = "hidden"
+		bottonIformacao2.style.width = "420px"
 
 	}
 
@@ -43,34 +44,45 @@
 	}
 	.principal {
 		padding: 0;
-		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		margin-top: 0px;
+		border-radius: 7px;
+		box-shadow: 3px 3px grey;;
+		border: 5px solid;
+		border-color: white;
 		width: 900px;
 		height: 600px;
+		background: rgb(143,145,162);
+		background: linear-gradient(135deg, rgba(143,145,162,1) 0%, rgba(0,7,93,1) 100%); 
 		/*display: flex;*/
 		flex-direction: row;
 		/*align-items: center;
 		justify-content: center;*/
 	}
 	.topRow {
-		border: 1px solid;
-		border-color: darkcyan;
-		width: 890px;
-		height: 390px;
-		margin: 4px;
-		margin-left: 4px;
+		width: 880px;
+		height: 370px;
 		display: flex;
+		margin-top: 5px;
+		margin-left: 3px;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
 	}
 
 	.bottonRow {
-		border: 1px solid;
-		border-color: darkcyan;
-		width: 890px;
-		height: 195px;
+		width: 880px;
+		height: 192px;
 		margin: 4px;
-		margin-left: 4px;
+		margin-left: 3px;
 		display: flex;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
+		background: rgb(0,19,196);
+		background: linear-gradient(135deg, rgba(0,19,196,1) 0%, rgba(0,7,93,1) 100%);
+
 	}
 	#InicioBatalha {
 		border: 3px solid;
