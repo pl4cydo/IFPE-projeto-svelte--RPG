@@ -136,6 +136,7 @@ button:focus {
 		text-shadow: black 0.1em 0.1em 0.2em;
 
 
+
 	/*	visibility: hidden;*/
 	}
 	#inf {
@@ -187,6 +188,20 @@ button:focus {
 		width: 194px;
 		height: 30px;
 		background-color: green;
+	}
+	.barraMana {
+		margin-top: 5px;
+		margin-left: 44px;
+		width: 150px;
+		height: 15px;
+		border: 2px solid;
+		border-color: white;
+		border-radius: 3px;
+	}
+	#mana {
+		background-color: darkcyan;
+		height: 100%;
+		width: 0%;
 	}
 	#bottonIformacao {
 		width: 420px;
