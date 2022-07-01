@@ -1,4 +1,69 @@
 <script>
+	document.onkeydown = function(event) {
+        switch (event.keyCode) {
+           case 37:
+                // alert('Left key pressed');
+                if (eixoX != 953) {
+                	paraEsquerda()
+                }
+              break;
+           case 38:
+                // alert('Up key pressed');
+                if (eixoY != 371) {
+                	paraCima()
+                }
+              break;
+           case 39:
+                // alert('Right key pressed');
+                if (eixoX != 791) {
+                	paraDireita()
+                }
+              break;
+           case 40:
+                // alert('Down key pressed');
+                if (eixoY != 539) {
+                	paraBaixo()	
+                }
+              break;
+           case 13:
+           		entrarBatalha1()
+           	  break;
+        }
+    };
+
+    let eixoX = 791;
+    let eixoY = 539;
+ 
+	function paraCima() {
+	    eixoY -= 56;
+	    console.log(eixoY)
+		movimento.style.top = eixoY + "px"  
+	}
+	function paraBaixo() {
+	    eixoY += 56;
+	    console.log(eixoY)
+		movimento.style.top = eixoY + "px"  
+	}
+	function paraEsquerda() {
+		eixoX += 54;
+	    console.log(eixoX)
+		movimento.style.right = eixoX + "px" 
+		movimento.style.transform = "scaleX(-1)"
+	}
+	function paraDireita() {
+		eixoX -= 54;
+	    console.log(eixoX)
+		movimento.style.right = eixoX + "px" 
+		movimento.style.transform = "scaleX(1.0)"
+	}
+	function entrarBatalha1() {
+		if (eixoY == 371 && (eixoX == 845 || eixoX == 899)) {
+			alert('enter')
+        }
+	}
+
+
+
 	let tabela = [
 	[0,0,0,0,0,0,0,0,0,1,3,2,1,0],
 	[0,0,0,0,0,0,0,0,0,1,3,2,1,0],
@@ -39,72 +104,18 @@
 			{/each}
 
 		</table>
-
+		<img id="caminhao2" src="./images/caminhão2.png">
+		<img id="caminhao1" src="./images/caminhão1.png">
+		<div id="integracao">
+			<img src="./images/integracao.png">
+			<p>Integração<br>de<br> Igarassu</p>
+		</div>
+		<div id="movimento">
+			<img id="personagemMap" src="./images/player.png">
+		</div>
 	</div>
 </main>
 
 <style type="text/css">
-	#container {
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	#bloco {
-		width: 762px;
-		height: 566px;
-		border: 1px solid;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	tr {
-	border: 1px solid black;
-	display: inline-flex;	
-	}
-	td {
-	width: 50px;
-	height: 50px;
-	border: 1px solid black;
-	position: absolute-inline;
-	
-
-	}
-	.imgs {
-		width: 56px;
-		height: 56px;
-		margin-top: -2px;
-		margin-left: -2px;
-		margin-bottom: 0px;
-		position: absolute;
-	}
-	.imgs2 {
-		width: 56px;
-		height: 56px;
-		margin-top: -2px;
-		margin-left: -2px;
-		margin-bottom: 0px;
-		position: absolute;
-		transform: scaleX(-1);
-	}
-	.imgs3 {
-		width: 56px;
-		height: 56px;
-		margin-top: -2px;
-		margin-left: -2px;
-		margin-bottom: 0px;
-		position: absolute;
-		transform: rotate(90deg);
-	}
-	.imgs4 {
-		width: 56px;
-		height: 56px;
-		margin-top: -2px;
-		margin-left: -2px;
-		margin-bottom: 0px;
-		position: absolute;
-		transform:rotate(-90deg);
-	}
 
 </style>
