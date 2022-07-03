@@ -240,6 +240,7 @@
 		setTimeout(function(){
     			ataqueAleatorio()
 		},5000);
+		trocarTurno()
 		bottonIformacao.style.visibility = "hidden"
 	}
 	function movimentoMurro() {
