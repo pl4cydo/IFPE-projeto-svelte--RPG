@@ -1,0 +1,213 @@
+	.bloco2 {
+		width: 445px;
+		height: 390px;
+		/*border: 1px solid;
+		border-color: black;*/
+		display: flex;
+		position: relative;
+	}
+	#personagemBus2 {
+		border: 1px solid black;
+		margin: 3px;
+		width: 200px;
+		height: 250px;
+		top: 120px;
+		left: 200px;
+		position: absolute;
+		overflow: hidden;
+		transition: 0.2s ease;
+	}
+	#personagemBus2 img {
+		width: 100%;
+	} 
+	#barraInformacoesBus2 {
+		/*border: 1px solid black;*/
+		margin: 3px;
+		width: 200px;
+		height: 380px;
+		margin: 4px;
+		margin-left: 10px;
+		position: absolute;
+		visibility: hidden;
+		color: white;
+	}
+	.contornoBus2 {
+		width: 194px;
+		height: 30px;
+		border: 2px solid;
+		border-color: white;
+		border-radius: 3px;
+	}
+	#barraVidaBus2 {
+		width: 194px;
+		height: 30px;
+		background-color: green;
+		transition: 1.0s ease;
+	}
+	.nomeBus2 {
+		margin: 5px;
+		width: 250px;
+
+	}
+	#bottonIformacao22 {
+		/*width: 420px;*/
+		width: 855px;
+		height: 170px;
+		margin-top: 388px;
+		margin-left: 5px;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
+		background: rgb(0,19,196);
+		background: linear-gradient(135deg, rgba(0,19,196,1) 0%, rgba(0,7,93,1) 100%);
+		color: white;
+		position: absolute;
+		font-size: 18pt;
+		text-shadow: black 0.1em 0.1em 0.2em;
+
+
+
+	/*	visibility: hidden;*/
+	}
+	#inf2 {
+		margin-left: 15px;
+	}
+/************************* ESTUDANTE IFPE ************************ */
+	.bloco {
+		width: 445px;
+		height: 390px;
+		/*border: 1px solid;
+		border-color: black;*/
+		display: flex;
+		position: relative;
+	}
+
+	#barraInformacoes {
+		border/*: 1px solid black;*/
+		margin: 3px;
+		width: 200px;
+		height: 380px;
+		margin: 4px;
+		margin-left: 230px;
+		position: absolute;
+		visibility: hidden;
+		color: white;
+
+	}
+	#personagem {
+		/*border: 1px solid black;*/
+		margin: 3px;
+		width: 150px;
+		height: 140px;
+		top: 230px;
+		left: 100px;
+		position: absolute;
+		transition: 0.1s ease;
+	}
+	#personagem img {
+		width: 100%;
+		height: 100%;
+		transform: scaleX(-1);
+	}
+	.contorno {
+		width: 194px;
+		height: 30px;
+		border: 2px solid;
+		border-color: white;
+		border-radius: 3px;
+	}
+	#vidaEstudante {
+		width: 194px;
+		height: 30px;
+		background-color: green;
+		transition: 1.0s ease;
+	}
+	.barraMana {
+		margin-top: 5px;
+		margin-left: 44px;
+		width: 150px;
+		height: 15px;
+		border: 2px solid;
+		border-color: white;
+		border-radius: 3px;
+	}
+	#mana {
+		background-color: darkcyan;
+		height: 100%;
+		width: 0%;
+		transition: 1.0s ease;
+	}
+	#bottonIformacao {
+		width: 420px;
+		height: 170px;
+		margin-top: 388px;
+		visibility: hidden;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
+		background: rgb(0,19,196);
+		background: linear-gradient(135deg, rgba(0,19,196,1) 0%, rgba(0,7,93,1) 100%);
+		color: white;
+		font-size: 18pt;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
+	.nome {
+		margin: 5px;
+	}
+	.divAtaques {
+		width: 150px;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		margin-top: 6px;
+		margin-left: 250px;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
+		background: rgb(0,19,196);
+		background: linear-gradient(135deg, rgba(0,19,196,1) 0%, rgba(0,7,93,1) 100%);
+	}
+	#listaStatus {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: -10px;
+		font-size: 15pt;
+
+	}
+	#fimBatalha {
+		position: absolute;
+		width: 600px;
+		height: 250px;
+		top: 150px;
+		left: -300px;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
+		background: rgb(0,19,196);
+		background: linear-gradient(135deg, rgba(0,19,196,1) 0%, rgba(0,7,93,1) 100%);
+		display: row;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		transform: 0.5s ease;
+	}
+	#fimBatalha h1, p {
+		margin-left: 20px;
+	}
+	#menuAtaques {
+		top: 399px;
+		left: 255px;
+		width: 150px;
+		height: 35px;
+		position: absolute;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: cyan;
+		box-shadow:  3px 3px grey;
+	}

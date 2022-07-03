@@ -1,8 +1,6 @@
 <script type="text/javascript">
 	import { Estudante } from "./Vida.js"
-	import { Bus } from "./Vida.js"
-	import { estado } from './Estado.js'
-	import { trocarEstadoDoJogo } from './Estado.js'
+	import { Caminhoneiro } from "./Vida.js"
 	import { estadoTurno } from "./Vida.js"
 
 
@@ -66,18 +64,18 @@
 
 
 
-	// ************************ BUS ************************
+	// ************************ Caminhoneiro ************************
 
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
-		if ($Bus.vidabus > 0) {
+		if ($Caminhoneiro.vidaCarlos > 0) {
 			if (aleatorio < 8) {
-				inf.innerHTML = $Bus.nome + " Tentou atacar com Arranque "
+				inf2.innerHTML = $Caminhoneiro.nome + " Tentou atacar com Arranque "
 				setTimeout(function(){
 					arranque()
 				},2000);
 			} else {
-				inf.innerHTML = $Bus.nome + " Tentou Queimar a Parada "
+				inf2.innerHTML = $Caminhoneiro.nome + " Tentou Queimar a Parada "
 				setTimeout(function(){
 					queimarParada()	
 				},2000); 
@@ -86,24 +84,24 @@
 	}
 
 	function arranque() {
-		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
+		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Bus.ataque + 10;
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 10;
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Arranque com " + dano + " de dano"
 			},2000);
 			setTimeout(function(){
-    			vidaEstudante3.style.width = $Estudante.vida + "px"
+    			vidaEstudante.style.width = $Estudante.vida + "px"
 			},4000);
 			movimentoArranque()
 		} else {
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Errou!"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
-			bottonIformacao2.style.visibility = "hidden"
+			bottonIformacao22.style.visibility = "hidden"
 
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
@@ -111,7 +109,7 @@
 			},3000);
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
+    		inf2.innerHTML = "Fim do turno"
 		},5000);
 		
 		setTimeout(function(){
@@ -123,17 +121,17 @@
 		
 	}
 	function movimentoArranque() {
-		personagemBus.style.transform = "rotate(-10deg)"
+		personagemBus2.style.transform = "rotate(-10deg)"
 		setTimeout(function(){
-			personagemBus.style.left = "300px"
+			personagemBus2.style.left = "300px"
 		},400);
 		setTimeout(function(){
-			personagemBus.style.transform = "rotate(0deg)"
+			personagemBus2.style.transform = "rotate(0deg)"
 			personagem.style.transform = "rotate(45deg)"
 			personagem.style.top = "250px"
 		},500);
 		setTimeout(function(){
-			personagemBus.style.left = "10px"
+			personagemBus2.style.left = "10px"
 		},1000);
 		setTimeout(function(){
 			personagem.style.transform = "rotate(0deg)"
@@ -142,22 +140,22 @@
 	}
 
 	function queimarParada() {
-		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
+		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Bus.ataque + 30
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 30
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
-    			vidaEstudante3.style.width = $Estudante.vida + "px"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Queimou a parada e causou " + dano + " de dano"
+    			vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
 			movimentoQueimarParada()
 		} else {
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Errou!"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
-			bottonIformacao2.style.visibility = "hidden"
+			bottonIformacao22.style.visibility = "hidden"
 
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
@@ -165,7 +163,7 @@
 			},3000);
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
+    		inf2.innerHTML = "Fim do turno"
 		},5000);
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
@@ -175,13 +173,13 @@
 		trocarTurno()
 	}
 	function movimentoQueimarParada() {
-		personagemBus.style.left = "400px"
+		personagemBus2.style.left = "400px"
 		setTimeout(function(){
 			personagem.style.transform = "rotate(45deg)"
 			personagem.style.top = "250px"
 		},500);
 		setTimeout(function(){
-			personagemBus.style.left = "10px"
+			personagemBus2.style.left = "10px"
 		},1000);
 		setTimeout(function(){
 			personagem.style.transform = "rotate(0deg)"
@@ -192,7 +190,7 @@
 	function fimBus() {
 		barraInformacoes.style.visibility = "hidden"
 		bottonIformacao.style.visibility = "hidden"
-		barraInformacoesBus.style.visibility = "hidden"
+		barraInformacoesBus2.style.visibility = "hidden"
 		fimBatalha.innerHTML = "<h1>YOU LOSE! :)</h1><br><p> Levou 5 faltas, tente a sorte amanhã.</p>"
 		setTimeout(function(){
     		fimBatalha.style.visibility = "visible"
@@ -209,14 +207,14 @@
 	
 	
 	function murro() {
-		inf.innerHTML = $Estudante.nome + " atacou com Murro"
+		inf2.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
-		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 187;
+		if (acerto >= $Caminhoneiro.def){
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10;
 			setTimeout(function(){
-    			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
-				$Bus.vidabus -= dano;
-    			barraVidaBus.style.width = $Bus.vidabus + "px"
+    			inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+				$Caminhoneiro.vidaCarlos -= dano;
+    			barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
     			movimentoMurro()
 			},2000);
 			contadorPower++
@@ -225,13 +223,13 @@
 			},2500);
 		} else {
 			setTimeout(function(){
-    			inf.innerHTML = $Estudante.nome + " errou o ataque!"
+    			inf2.innerHTML = $Estudante.nome + " errou o ataque!"
 			},2000);
 		}
 		setTimeout(function(){
-			if ($Bus.vidabus <= 0) {
-				imagemBus.style.transform = "rotate(180deg)"
-				bottonIformacao2.style.visibility = "hidden"
+			if ($Caminhoneiro.vidaCarlos <= 0) {
+				imagemBus2.style.transform = "rotate(180deg)"
+				bottonIformacao22.style.visibility = "hidden"
 				setTimeout(function(){
     					fim()
     				},4000);
@@ -246,10 +244,10 @@
 	function movimentoMurro() {
 		personagem.style.left = "0"
 		setTimeout(function(){
-    		personagemBus.style.top = "190px"
+    		personagemBus2.style.top = "190px"
 		},500);
 		setTimeout(function(){
-			personagemBus.style.top = "170px"
+			personagemBus2.style.top = "170px"
 		},600);
 		setTimeout(function(){
 			personagem.style.left = "100px"
@@ -260,7 +258,7 @@
 	let vidaAtual = $Estudante.vida;
 	function curaEstudante() {
 		if (contadorCura == 0) {
-			inf.innerHTML = $Estudante.nome + "comeu um lanche e recuperou vida"
+			inf2.innerHTML = $Estudante.nome + "comeu um lanche e recuperou vida"
 			let cura = Math.round(0.3 * vidaAtual)
 			if ((cura + $Estudante.vida) > 194) {
 				$Estudante.vida = 194
@@ -270,16 +268,16 @@
 			}
 			movimentoCura()
 			setTimeout(function(){
-				inf.innerHTML = $Estudante.nome + " curou 30% do HP atual"
-				vidaEstudante3.style.width = $Estudante.vida + "px"
+				inf2.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+				vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
 			contadorPower++
 			manaCor()
 		} else {
-			inf.innerHTML = "Opa! a bolsa permanência é para a passagem. Um lanche por dia!"
+			inf2.innerHTML = "Opa! a bolsa permanência é para a passagem. Um lanche por dia!"
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
+    		inf2.innerHTML = "Fim do turno"
 		},8000);	
 		setTimeout(function(){
     		ataqueAleatorio()
@@ -312,35 +310,35 @@
 	}
 	function carregarPower() {
 		if (contadorPower < 4) {
-			inf.innerHTML = "Falta energia, use outro movimento nesse turno."
+			inf2.innerHTML = "Falta energia, use outro movimento nesse turno."
 		} else {
 			power()
 		}
 	}
 
 	function power() {
-		inf.innerHTML = $Estudante.nome + " tomou distância"
+		inf2.innerHTML = $Estudante.nome + " tomou distância"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 3;
-		if (acerto >= $Bus.def){
+		if (acerto >= $Caminhoneiro.def){
 			let dano = Math.round(Math.random()*20) + $Estudante.ataque + 50;
 			setTimeout(function(){
-				$Bus.vidabus -= dano;
-    			inf.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
-    			barraVidaBus.style.width = $Bus.vidabus + "px"
+				$Caminhoneiro.vidaCarlos -= dano;
+    			inf2.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
+    			barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
     			movimentoPower() 
 			},4000);
 		} else {
 			setTimeout(function(){
-    			inf.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
+    			inf2.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
 			},4000);
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
+    		inf2.innerHTML = "Fim do turno"
 		},7000);
 		setTimeout(function(){
-			if ($Bus.vidabus <= 0) {
-				imagemBus.style.transform = "rotate(180deg)"
-				bottonIformacao2.style.visibility = "hidden"
+			if ($Caminhoneiro.vidaCarlos <= 0) {
+				imagemBus2.style.transform = "rotate(180deg)"
+				bottonIformacao22.style.visibility = "hidden"
 				setTimeout(function(){
     					fim()
     				},4000);
@@ -360,12 +358,12 @@
 		personagem.style.top = "130px"
 
 		setTimeout(function(){
-    		personagemBus.style.top = "190px"
-    		personagemBus.style.transform = "rotate(5deg)"
+    		personagemBus2.style.top = "190px"
+    		personagemBus2.style.transform = "rotate(5deg)"
 		},500);
 		setTimeout(function(){
-			personagemBus.style.top = "170px"
-			personagemBus.style.transform = "rotate(0deg)"
+			personagemBus2.style.top = "170px"
+			personagemBus2.style.transform = "rotate(0deg)"
 		},700);
 		setTimeout(function(){
 			personagem.style.left = "100px"
@@ -378,7 +376,7 @@
 	function fim() {
 		barraInformacoes.style.visibility = "hidden"
 		bottonIformacao.style.visibility = "hidden"
-		barraInformacoesBus.style.visibility = "hidden"
+		barraInformacoesBus2.style.visibility = "hidden"
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
@@ -388,29 +386,29 @@
 
 
 </script>
-<link rel="stylesheet" type="text/css" href="./styles/personagem.css">
+<link rel="stylesheet" type="text/css" href="./styles/personagem2.css">
 
-<!-- ************************ BUS ************************ -->
-<div class="bloco">
-	<div id="barraInformacoesBus">
-		<p class="nomeBus">{$Bus.nome}</p>
-		<p class="nomeBus">HP:{$Bus.vidabus}</p>
-		<div class="contornoBus">
-			<div  id="barraVidaBus"></div>
+<!-- ************************ Caminhoneiro ************************ -->
+<div class="bloco2">
+	<div id="barraInformacoesBus2">
+		<p class="nomeBus2">{$Caminhoneiro.nome}</p>
+		<p class="nomeBus2">HP:{$Caminhoneiro.vidaCarlos}</p>
+		<div class="contornoBus2">
+			<div  id="barraVidaBus2"></div>
 		</div>	
 	</div>
-	<div id="personagemBus">
-		<img id="imagemBus" src="./images/bus1.png" alt="bus">
+	<div id="personagemBus2">
+		<img id="imagemBus2" src="./images/truckdriver.png" alt="Caminhoneiro">
 	</div>
-	<div id="bottonIformacao2">
-		<p id="inf">O {$Bus.nome} apareceu, lute para conseguir subir no ônibus.</p>
+	<div id="bottonIformacao22">
+		<p id="inf2">O {$Caminhoneiro.nome} apareceu, lute para conseguir subir no ônibus.</p>
 	</div>
 </div>
 
 
 
 <!-- ************************ ESTUDANTE IFPE ************************ -->
-<div class="bloco">
+<div class="bloco2">
 	<div id="personagem">
 		<img src="./images/player.png" alt="personagem">
 	</div>
@@ -418,7 +416,7 @@
 		<p class="nome">EstudanteIFPE</p>
 		<p class="nome">HP:{$Estudante.vida}</p>
 		<div class="contorno">
-			<div id="vidaEstudante3"></div>
+			<div id="vidaEstudante"></div>
 		</div>
 		<div class="barraMana">
 			<div id="mana"></div>

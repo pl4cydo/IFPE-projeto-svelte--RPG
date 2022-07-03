@@ -1,15 +1,15 @@
 <script type="text/javascript">
-	import Personagem from "./Contents/Personagem.svelte"
+	import Personagem2 from "./Contents/Personagem2.svelte"
 	import { Estudante } from "./Contents/Vida.js"
-	import { Bus } from "./Contents/Vida.js"
+	import { Caminhoneiro } from "./Contents/Vida.js"
 	import { estadoTurno } from "./Contents/Vida.js"
 	
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
 		bottonIformacao.style.visibility = "visible"
-		barraInformacoesBus.style.visibility = "visible"
+		barraInformacoesBus2.style.visibility = "visible"
 		InicioBatalha.style.visibility = "hidden"
-		bottonIformacao2.style.width = "420px"
+		bottonIformacao22.style.width = "420px"
 		$estadoTurno = true;
 
 	}
@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class="principal">
 			<div class="topRow">
-				<Personagem/>
+				<Personagem2/>
 				<div id="InicioBatalha" on:click={() => iniciar()}> Iniciar </div>
 			</div>
 			<div class="bottonRow">
