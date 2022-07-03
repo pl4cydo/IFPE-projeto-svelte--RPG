@@ -8,10 +8,10 @@
 
 
 <!-- <Menu/> -->
-<!-- <Mapa1/> -->
+<Mapa1/>
 <!-- <Batalha1/> -->
 <!-- <Sobre/> -->
-
+<!-- 
 
 {#if $estado === 'menu'}
 	<Menu/>
@@ -21,4 +21,4 @@
 	<Sobre/>
 {:else if $estado === 'batalha'}
 	<Batalha1/>
-{/if}
+{/if} -->

@@ -127,6 +127,7 @@ document.onkeydown = function(event) {
 			<img src="./images/integracao.png" alt="integracao">
 			<p>Integração<br>de<br> Igarassu</p>
 		</div>
+		<img class="home" src="./images/home.png" alt="home">
 		<div id="movimento">
 			<img id="personagemMap" src="./images/player.png" alt="personagem">
 		</div>
