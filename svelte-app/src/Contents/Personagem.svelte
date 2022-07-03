@@ -11,18 +11,19 @@
 
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
-		if (aleatorio < 8) {
-			inf.innerHTML = $Bus.nome + " Tentou atacar com Arranque "
-			setTimeout(function(){
-				arranque()
-			},2000);
-		} else {
-			inf.innerHTML = $Bus.nome + " Tentou Queimar a Parada "
-			setTimeout(function(){
-				queimarParada()	
-			},2000); 
+		if ($Bus.vidabus > 0) {
+			if (aleatorio < 9) {
+				inf.innerHTML = $Bus.nome + " Tentou atacar com Arranque "
+				setTimeout(function(){
+					arranque()
+				},2000);
+			} else {
+				inf.innerHTML = $Bus.nome + " Tentou Queimar a Parada "
+				setTimeout(function(){
+					queimarParada()	
+				},2000); 
+			}
 		}
-
 	}
 
 	function arranque() {
@@ -36,6 +37,7 @@
 			setTimeout(function(){
     			vidaEstudante3.style.width = $Estudante.vida + "px"
 			},4000);
+			movimentoArranque()
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Errou!"
@@ -52,15 +54,35 @@
 		},6000);
 
 	}
+	function movimentoArranque() {
+		personagemBus.style.transform = "rotate(-10deg)"
+		setTimeout(function(){
+			personagemBus.style.left = "300px"
+		},400);
+		setTimeout(function(){
+			personagemBus.style.transform = "rotate(0deg)"
+			personagem.style.transform = "rotate(45deg)"
+			personagem.style.top = "250px"
+		},500);
+		setTimeout(function(){
+			personagemBus.style.left = "10px"
+		},1000);
+		setTimeout(function(){
+			personagem.style.transform = "rotate(0deg)"
+			personagem.style.top = "230px"
+		},1500);
+	}
+
 	function queimarParada() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*12) + $Bus.ataque + 10
+			let dano = Math.round(Math.random()*12) + $Bus.ataque + 20
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
     			vidaEstudante3.style.width = $Estudante.vida + "px"
 			},2000);
+			movimentoQueimarParada()
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Errou!"
@@ -79,6 +101,20 @@
 		},8000);
 
 	}
+	function movimentoQueimarParada() {
+		personagemBus.style.left = "400px"
+		setTimeout(function(){
+			personagem.style.transform = "rotate(45deg)"
+			personagem.style.top = "250px"
+		},500);
+		setTimeout(function(){
+			personagemBus.style.left = "10px"
+		},1000);
+		setTimeout(function(){
+			personagem.style.transform = "rotate(0deg)"
+			personagem.style.top = "230px"
+		},1500);
+	} 
 
 	function fimBus() {
 		bottonIformacao.style.visibility = "hidden"
@@ -94,16 +130,19 @@
 	
 	function murro() {
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
-		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
+		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
 		if (acerto >= $Bus.def){
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 100;
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;
     			barraVidaBus.style.width = $Bus.vidabus + "px"
+    			movimentoMurro()
 			},2000);
 			contadorPower++
-			manaCor()
+			setTimeout(function(){
+    			manaCor()
+			},2500);
 		} else {
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " errou o ataque!"
@@ -111,6 +150,9 @@
 		}
 		setTimeout(function(){
     		inf.innerHTML = "Fim do turno"
+		},5000);
+		setTimeout(function(){
+    		ataqueAleatorio()
 		},5000);
 		setTimeout(function(){
 			if ($Bus.vidabus <= 0) {
@@ -121,11 +163,21 @@
     			},4000);
 			}
 		},6000);
-		setTimeout(function(){
-    		ataqueAleatorio()
-		},8000);
 		bottonIformacao.style.visibility = "hidden"
+
 	}
+	function movimentoMurro() {
+		personagem.style.left = "0"
+		setTimeout(function(){
+    		personagemBus.style.top = "190px"
+		},500);
+		setTimeout(function(){
+			personagemBus.style.top = "170px"
+		},600);
+		setTimeout(function(){
+			personagem.style.left = "100px"
+		},300);	
+	} 
 
 	let contadorCura = 0;
 	let vidaAtual = $Estudante.vida;
@@ -139,6 +191,7 @@
 			} else {
 				$Estudante.vida += cura
 			}
+			movimentoCura()
 			setTimeout(function(){
 				inf.innerHTML = $Estudante.nome + " curou 30% do HP atual"
 				vidaEstudante3.style.width = $Estudante.vida + "px"
@@ -157,6 +210,13 @@
 		bottonIformacao.style.visibility = "hidden"
 		contadorCura++
 	}
+	function movimentoCura() {
+		personagem.style.top = "200px"
+		setTimeout(function(){
+    		personagem.style.top = "230px"
+		},2000);
+	}
+
 
 	let contadorPower = 0;
 	function manaCor() {
@@ -189,6 +249,7 @@
 				$Bus.vidabus -= dano;
     			inf.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
     			barraVidaBus.style.width = $Bus.vidabus + "px"
+    			movimentoPower() 
 			},4000);
 		} else {
 			setTimeout(function(){
@@ -208,13 +269,31 @@
 			}
 		},8000);
 		setTimeout(function(){
-    		ataqueAleatorio()
+    			ataqueAleatorio()
 		},5000);
 		bottonIformacao.style.visibility = "hidden"
 		contadorPower = 0;
 		manaCor()
 	} 
+	function movimentoPower() {
+		personagem.style.left = "0"
+		personagem.style.transform = "rotate(55deg)"
+		personagem.style.top = "130px"
 
+		setTimeout(function(){
+    		personagemBus.style.top = "190px"
+    		personagemBus.style.transform = "rotate(5deg)"
+		},500);
+		setTimeout(function(){
+			personagemBus.style.top = "170px"
+			personagemBus.style.transform = "rotate(0deg)"
+		},700);
+		setTimeout(function(){
+			personagem.style.left = "100px"
+			personagem.style.top = "230px"
+			personagem.style.transform = "rotate(0deg)"
+		},250);	
+	} 
 	
 
 	function fim() {
@@ -240,8 +319,8 @@
 			<div  id="barraVidaBus"></div>
 		</div>	
 	</div>
-	<div class="personagemBus">
-		<img id="imagemBus" src="./images/bus1.png"/>
+	<div id="personagemBus">
+		<img id="imagemBus" src="./images/bus1.png" alt="bus">
 	</div>
 	<div id="bottonIformacao2">
 		<p id="inf">O {$Bus.nome} apareceu, lute para conseguir subir no ônibus.</p>
@@ -252,8 +331,8 @@
 
 <!-- ************************ ESTUDANTE IFPE ************************ -->
 <div class="bloco">
-	<div class="personagem">
-		<img src="./images/player.png">
+	<div id="personagem">
+		<img src="./images/player.png" alt="personagem">
 	</div>
 	<div id="barraInformacoes">
 		<p class="nome">EstudanteIFPE</p>

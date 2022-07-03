@@ -68,6 +68,7 @@
 		border-radius: 7px;
 		border-color: white;
 		box-shadow:  3px 3px grey;
+		/*overflow: hidden;*/
 	}
 
 	.bottonRow {

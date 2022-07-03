@@ -105,15 +105,15 @@ document.onkeydown = function(event) {
 						{#if a == 0 }
 								<img class="imgs" src="./images/grama1.jpg" alt="grama">	
 						{:else if a == 1}
-								<img class="imgs" src="./images/floor.jpg">
+								<img class="imgs" src="./images/floor.jpg" alt="floor">
 						{:else if a == 2}
-								<img class="imgs" src="./images/asphalt-rigth.jpg">
+								<img class="imgs" src="./images/asphalt-rigth.jpg" alt="asphalt">
 						{:else if a == 3}
-								<img class="imgs2" src="./images/asphalt-rigth.jpg">
+								<img class="imgs2" src="./images/asphalt-rigth.jpg" alt="asphalt">
 						{:else if a == 4}
-								<img class="imgs3" src="./images/asphalt-rigth.jpg">
+								<img class="imgs3" src="./images/asphalt-rigth.jpg" alt="asphalt">
 						{:else if a == 5}
-								<img class="imgs4" src="./images/asphalt-rigth.jpg">		
+								<img class="imgs4" src="./images/asphalt-rigth.jpg" alt="asphalt">		
 						{/if} 
 						</td>
 					{/each}	
@@ -121,14 +121,14 @@ document.onkeydown = function(event) {
 			{/each}
 
 		</table>
-		<img id="caminhao2" src="./images/caminhão2.png">
-		<img id="caminhao1" src="./images/caminhão1.png">
+		<img id="caminhao2" src="./images/caminhão2.png" alt="caminhão">
+		<img id="caminhao1" src="./images/caminhão1.png" alt="caminhão">
 		<div id="integracao">
-			<img src="./images/integracao.png">
+			<img src="./images/integracao.png" alt="integracao">
 			<p>Integração<br>de<br> Igarassu</p>
 		</div>
 		<div id="movimento">
-			<img id="personagemMap" src="./images/player.png">
+			<img id="personagemMap" src="./images/player.png" alt="personagem">
 		</div>
 	</div>
 </main>
