@@ -71,7 +71,7 @@
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*12) + $Bus.ataque
+			let dano = Math.round(Math.random()*12) + $Bus.ataque + 100
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
@@ -86,15 +86,21 @@
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
-			fimBus()
+			bottonIformacao2.style.visibility = "hidden"
+
+			setTimeout(function(){
+				personagem.style.transform = "rotate(90deg)"
+				fimBus()
+			},3000);
 		}
 		setTimeout(function(){
     		inf.innerHTML = "Fim do turno"
 		},5000);
-		setTimeout(function(){
+		if ($Estudante.vida != 0 || $Bus.vidabus != 0) {
+			setTimeout(function(){
     		bottonIformacao.style.visibility = "visible"
-		},6000);
-
+			},6000);
+		}
 	}
 	function movimentoArranque() {
 		personagemBus.style.transform = "rotate(-10deg)"
@@ -118,7 +124,7 @@
 	function queimarParada() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*12) + $Bus.ataque + 20
+			let dano = Math.round(Math.random()*12) + $Bus.ataque + 30
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
@@ -131,16 +137,21 @@
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
+			bottonIformacao2.style.visibility = "hidden"
+
 			setTimeout(function(){
-	    		fimBus()
-			},5000);
+				personagem.style.transform = "rotate(90deg)"
+				fimBus()
+			},3000);
 		}
 		setTimeout(function(){
     		inf.innerHTML = "Fim do turno"
-		},6000);
-		setTimeout(function(){
+		},5000);
+		if ($Estudante.vida != 0 || $Bus.vidabus != 0) {
+			setTimeout(function(){
     		bottonIformacao.style.visibility = "visible"
-		},8000);
+			},6000);
+		}
 
 	}
 	function movimentoQueimarParada() {
@@ -159,10 +170,16 @@
 	} 
 
 	function fimBus() {
-		bottonIformacao.style.visibility = "hidden"
 		barraInformacoes.style.visibility = "hidden"
+		bottonIformacao.style.visibility = "hidden"
 		barraInformacoesBus.style.visibility = "hidden"
-		alert("Você perdeu :) , recebeu 5 faltas, tente amanhã")
+		fimBatalha.innerHTML = "<h1>YOU LOSE! :)</h1><br><p> Levou 5 faltas, tente a sorte amanhã.</p>"
+		setTimeout(function(){
+    		fimBatalha.style.visibility = "visible"
+		},5000);
+		setTimeout(function(){
+    		 location.reload();
+		},8000);
 	}
 
 
@@ -196,15 +213,13 @@
 		setTimeout(function(){
     		ataqueAleatorio()
 		},5000);
-		setTimeout(function(){
-			if ($Bus.vidabus <= 0) {
-				imagemBus.style.transform = "rotate(180deg)"
-				bottonIformacao2.style.visibility = "hidden"
-				setTimeout(function(){
-    			fim()
-    			},4000);
-			}
-		},6000);
+		if ($Bus.vidabus <= 0) {
+			imagemBus.style.transform = "rotate(180deg)"
+			bottonIformacao2.style.visibility = "hidden"
+			setTimeout(function(){
+			fim()
+			},10000);
+		}
 		bottonIformacao.style.visibility = "hidden"
 
 	}
