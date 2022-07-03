@@ -8,11 +8,11 @@
 
 
 <!-- <Menu/> -->
-<Mapa1/>
-<!-- <Batalha1/> -->
+<!-- <Mapa1/> -->
+<Batalha1/>
 <!-- <Sobre/> -->
-<!-- 
 
+<!-- 
 {#if $estado === 'menu'}
 	<Menu/>
 {:else if $estado === 'jogar'}

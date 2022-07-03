@@ -2,6 +2,7 @@
 	import Personagem from "./Contents/Personagem.svelte"
 	import { Estudante } from "./Contents/Vida.js"
 	import { Bus } from "./Contents/Vida.js"
+	import { estadoTurno } from "./Contents/Vida.js"
 	
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
@@ -9,8 +10,11 @@
 		barraInformacoesBus.style.visibility = "visible"
 		InicioBatalha.style.visibility = "hidden"
 		bottonIformacao2.style.width = "420px"
+		$estadoTurno = true;
 
 	}
+
+
 
 </script>
 

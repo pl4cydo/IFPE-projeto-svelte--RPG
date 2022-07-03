@@ -7,7 +7,7 @@
 		position: relative;
 	}
 	#personagemBus {
-		border: 1px solid black;
+	/*	border: 1px solid black;*/
 		margin: 3px;
 		width: 500px;
 		height: 200px;
@@ -100,7 +100,7 @@
 
 	}
 	#personagem {
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		margin: 3px;
 		width: 150px;
 		height: 140px;

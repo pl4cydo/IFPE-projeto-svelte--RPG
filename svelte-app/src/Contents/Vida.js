@@ -15,3 +15,6 @@ export let Estudante = writable({
 	ataque: 5,
 	def: 15
 });
+
+export let estadoTurno = writable(false);
+ 
