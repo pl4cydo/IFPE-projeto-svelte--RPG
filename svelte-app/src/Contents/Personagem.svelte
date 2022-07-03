@@ -88,7 +88,7 @@
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Bus.ataque;
+			let dano = Math.round(Math.random()*20) + $Bus.ataque + 10;
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
@@ -197,8 +197,9 @@
 		setTimeout(function(){
     		fimBatalha.style.visibility = "visible"
 		},4000);
+		$estadoTurno = false;
 		setTimeout(function(){
-    		 location.reload();
+    			 location.reload();
 		},10000);
 	}
 
@@ -211,7 +212,7 @@
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
 		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 187;
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;
@@ -228,20 +229,18 @@
 			},2000);
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
-		},5000);
+			if ($Bus.vidabus <= 0) {
+				imagemBus.style.transform = "rotate(180deg)"
+				bottonIformacao2.style.visibility = "hidden"
+				setTimeout(function(){
+    					fim()
+    				},4000);
+			}
+		},2000);
 		setTimeout(function(){
-    		ataqueAleatorio()
+    			ataqueAleatorio()
 		},5000);
-		if ($Bus.vidabus <= 0) {
-			imagemBus.style.transform = "rotate(180deg)"
-			bottonIformacao2.style.visibility = "hidden"
-			setTimeout(function(){
-			fim()
-			},10000);
-		}
 		bottonIformacao.style.visibility = "hidden"
-		trocarTurno()
 	}
 	function movimentoMurro() {
 		personagem.style.left = "0"
@@ -342,8 +341,8 @@
 				imagemBus.style.transform = "rotate(180deg)"
 				bottonIformacao2.style.visibility = "hidden"
 				setTimeout(function(){
-    			fim()
-    			},4000);
+    					fim()
+    				},4000);
 			}
 		},8000);
 		setTimeout(function(){
@@ -380,8 +379,9 @@
 		bottonIformacao.style.visibility = "hidden"
 		barraInformacoesBus.style.visibility = "hidden"
 		fimBatalha.style.visibility = "visible"
+		// $estadoTurno = false;
 		setTimeout(function(){
-    		trocarEstadoDoJogo('jogar')
+    			trocarEstadoDoJogo('mapa2')
 		},5000);
 	}
 
