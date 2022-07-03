@@ -121,13 +121,19 @@ document.onkeydown = function(event) {
 			{/each}
 
 		</table>
-		<img id="caminhao2" src="./images/caminhão2.png" alt="caminhão">
-		<img id="caminhao1" src="./images/caminhão1.png" alt="caminhão">
+		<img id="caminhao2" src="./images/caminhão2.0.png" alt="caminhão">
+		<img id="caminhao1" src="./images/caminhão1.0.png" alt="caminhão">
+		<!-- <img class="carro2" src="./images/carro2.png" alt="carro"> -->
 		<div id="integracao">
 			<img src="./images/integracao.png" alt="integracao">
 			<p>Integração<br>de<br> Igarassu</p>
 		</div>
 		<img class="home" src="./images/home.png" alt="home">
+		<div id="ifpe">
+			<img src="./images/ifpe.png" alt="ifpe">
+			<p>IFPE<br>Campus<br>Igarassu</p>
+		</div>
+		
 		<div id="movimento">
 			<img id="personagemMap" src="./images/player.png" alt="personagem">
 		</div>

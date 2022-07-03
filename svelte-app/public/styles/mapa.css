@@ -64,16 +64,25 @@
 	}
 	#caminhao1 {
 		position: absolute;
-		height: 75px;
-		margin-top: 30px;
+		height: 120px;
+		margin-top: 15px;
 		margin-left: 200px;
-		transform: scaleX(-1);
+		transform: rotate(-26deg) scaleX(-1);
+	
+	}
+	.carro2 {
+		position: absolute;
+		transform: rotate(25deg);
+		height: 120px;
+		top: 219px;
+		left: 540px;
 	}
 	#caminhao2 {
 		position: absolute;
 		height: 130px;
-		margin-top: -70px;
-		margin-right: 50px;
+		margin-top: -100px;
+		margin-right: -100px;
+		transform: rotate(26deg) scaleX(-1);
 	}
 	#integracao {
 		position: absolute;
@@ -115,5 +124,23 @@
 		position: absolute;
 		height: 90px;
 		top: 500px;
-		left: 590px;
+		left: 575px;
+	}
+	#ifpe {
+		position: absolute;
+		height: 170px;
+		top: 20px;
+		left: 600px;
+	}
+	#ifpe img {
+		height: 100%;
+		transform: scaleX(-1);
+	}
+	#ifpe p {
+		font: 15pt sans-serif;
+		position: absolute;
+		color: white;
+		top: 30px;
+		left: -90px;
+		text-shadow: #000 2px 3px 2px;
 	}
