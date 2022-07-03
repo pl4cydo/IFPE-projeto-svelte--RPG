@@ -9,11 +9,11 @@
 
 <!-- <Menu/> -->
 <!-- <Mapa1/> -->
-<!-- <Batalha1/> -->
+<Batalha1/>
 <!-- <Sobre/> -->
 
 
-{#if $estado === 'menu'}
+<!-- {#if $estado === 'menu'}
 	<Menu/>
 {:else if $estado === 'jogar'}
 	<Mapa1/>
@@ -21,4 +21,4 @@
 	<Sobre/>
 {:else if $estado === 'batalha'}
 	<Batalha1/>
-{/if}
+{/if} -->

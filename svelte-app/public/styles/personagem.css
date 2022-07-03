@@ -161,7 +161,6 @@
 		margin: 5px;
 	}
 	.divAtaques {
-		border: 1px solid black;
 		width: 150px;
 		height: 35px;
 		display: flex;
@@ -205,4 +204,14 @@
 	#fimBatalha h1, p {
 		margin-left: 20px;
 	}
-	
+	#menuAtaques {
+		top: 399px;
+		left: 255px;
+		width: 150px;
+		height: 35px;
+		position: absolute;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: red;
+		box-shadow:  3px 3px grey;
+	}

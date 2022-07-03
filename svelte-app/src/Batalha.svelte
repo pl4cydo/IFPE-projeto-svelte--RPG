@@ -36,7 +36,7 @@
 	}*/
 	.container {
 		width: 100%;
-		height: 100hv;
+		height: 100vh;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

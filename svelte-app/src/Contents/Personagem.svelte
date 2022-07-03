@@ -4,6 +4,48 @@
 	import { estado } from './Estado.js'
 	import { trocarEstadoDoJogo } from './Estado.js'
 
+	// MENU BATALHA
+
+	let menuEixoY = 399;
+	document.onkeydown = function(event) {
+    switch (event.keyCode) {
+       case 38:
+            // alert('Up key pressed');
+            	// paraCima()
+            menuParaCima()
+          break;
+       case 40:
+            // alert('Down key pressed');
+            	// paraBaixo()	
+            menuParaBaixo()
+          break;
+       case 13:
+       		if (menuEixoY == 399) {
+       			murro()
+       		} else if (menuEixoY == 454) {
+       			curaEstudante()
+       		} else if (menuEixoY == 509) {
+       			power()
+       		} 
+
+       		// alert("ENTER")
+       		// entrarAtaque()
+       	  break;
+    	}
+	};
+
+	function menuParaBaixo() {
+		if (menuEixoY != 509) {
+			menuAtaques.style.top = (menuEixoY += 55) + "px"
+			console.log(menuEixoY)
+		}
+	}
+	function menuParaCima() {
+		if (menuEixoY != 399) {
+			menuAtaques.style.top = (menuEixoY -= 55) + "px"
+			console.log(menuEixoY)
+		}
+	}
 
 
 
@@ -132,7 +174,7 @@
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
 		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 100;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque;
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;
@@ -352,9 +394,10 @@
 			<li>Ataque: D10 + {$Estudante.ataque}</li>
 			<li>Defesa: {$Estudante.def}</li>
 		</ul>
-		<div class="divAtaques" on:click={() => murro()}>Murro</div>
-		<div class="divAtaques" on:click={() => curaEstudante()}>Lanche da Tia</div>
-		<div class="divAtaques" on:click={() => carregarPower()}>'Vuadora'</div>
+		<div class="divAtaques">Murro</div>
+		<div class="divAtaques">Lanche da Tia</div>
+		<div class="divAtaques">'Vuadora'</div>
+		<div id="menuAtaques"></div>
 		<div id="fimBatalha">
 			<h1>YOU WIN!</h1>
 			<p> Agora suba no ônibus derrotado e siga para o IFPE</p>
