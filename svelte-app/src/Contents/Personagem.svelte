@@ -40,7 +40,7 @@
 	       		} else if (menuEixoY == 454) {
 	       			curaEstudante()
 	       		} else if (menuEixoY == 509) {
-	       			power()
+	       			carregarPower() 
 	       		} 
 	       	}
        		// alert("ENTER")
@@ -212,7 +212,7 @@
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
 		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 187;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 100;
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;

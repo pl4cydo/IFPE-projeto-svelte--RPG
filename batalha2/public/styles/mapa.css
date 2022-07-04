@@ -70,13 +70,7 @@
 		transform: rotate(-26deg) scaleX(-1);
 	
 	}
-	.carro2 {
-		position: absolute;
-		transform: rotate(25deg);
-		height: 120px;
-		top: 219px;
-		left: 540px;
-	}
+
 	#caminhao2 {
 		position: absolute;
 		height: 130px;

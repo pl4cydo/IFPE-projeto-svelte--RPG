@@ -6,25 +6,25 @@ document.onkeydown = function(event) {
     switch (event.keyCode) {
        case 37:
             // alert('Left key pressed');
-            if (eixoX != 953) {
+            if (eixoX != 57) {
             	paraEsquerda()
             }
           break;
        case 38:
             // alert('Up key pressed');
-            if (eixoY != 203) {
+            if (eixoY != 172) {
             	paraCima()
             }
           break;
        case 39:
             // alert('Right key pressed');
-            if (eixoX != 629) {
+            if (eixoX != 327) {
             	paraDireita()
             }
           break;
        case 40:
             // alert('Down key pressed');
-            if (eixoY != 371) {
+            if (eixoY != 284) {
             	paraBaixo()	
             }
           break;
@@ -34,8 +34,8 @@ document.onkeydown = function(event) {
     }
 };
 
-    let eixoX = 899;
-    let eixoY = 315;
+    let eixoX = 111;
+    let eixoY = 284;
  
 	function paraCima() {
 	    eixoY -= 56;
@@ -50,28 +50,28 @@ document.onkeydown = function(event) {
 		maior()
 	}
 	function paraEsquerda() {
-		eixoX += 54;
-	    console.log(eixoX)
-		movimento.style.right = eixoX + "px" 
+		eixoX -= 54;
+	    	console.log(eixoX)
+		movimento.style.left = eixoX + "px" 
 		movimento.style.transform = "scaleX(-1)"
 		maior()
 	}
 	function paraDireita() {
-		eixoX -= 54;
-	   	console.log(eixoX)
-		movimento.style.right = eixoX + "px" 
+		eixoX += 54;
+	    console.log(eixoX)
+		movimento.style.left = eixoX + "px" 
 		movimento.style.transform = "scaleX(1.0)"
 		maior()
 	}
 	function entrarBatalha1() {
-		if ((eixoY == 259 || eixoY == 315) && eixoX == 629) {
+		if ((eixoY == 228 || eixoY == 284) && eixoX == 327) {
 			// alert('enter')
 			trocarEstadoDoJogo('batalha')
         }
 	}
 
 	function maior() {
-		if ((eixoY == 259 || eixoY == 315) && eixoX == 629) {
+		if ((eixoY == 228 || eixoY == 284) && eixoX == 327) {
 			caminhao1.style.height = "140px"
 			caminhao2.style.height = "150px"
 		} else {
@@ -123,21 +123,22 @@ document.onkeydown = function(event) {
 			{/each}
 
 		</table>
-		<img id="caminhao2" src="./images/caminhão2.0.png" alt="caminhão">
-		<img id="caminhao1" src="./images/caminhão1.0.png" alt="caminhão">
-		<!-- <img class="carro2" src="./images/carro2.png" alt="carro"> -->
-		<div id="integracao">
-			<img src="./images/integracao.png" alt="integracao">
-			<p>Integração<br>de<br> Igarassu</p>
-		</div>
-		<img class="home" src="./images/home.png" alt="home">
-		<div id="ifpe">
-			<img src="./images/ifpe.png" alt="ifpe">
-			<p>IFPE<br>Campus<br>Igarassu</p>
-		</div>
-		
-		<div id="movimento">
-			<img id="personagemMap" src="./images/player.png" alt="personagem">
+		<div id="blocoMapa">
+			<img id="caminhao2" src="./images/caminhão2.0.png" alt="caminhão">
+			<img id="caminhao1" src="./images/caminhão1.0.png" alt="caminhão">
+			<!-- <img class="carro2" src="./images/carro2.png" alt="carro"> -->
+			<div id="integracao">
+				<img src="./images/integracao.png" alt="integracao">
+				<p>Integração<br>de<br> Igarassu</p>
+			</div>
+			<img class="home" src="./images/home.png" alt="home">
+			<div id="ifpe">
+				<img src="./images/ifpe.png" alt="ifpe">
+				<p>IFPE<br>Campus<br>Igarassu</p>
+			</div>
+			<div id="movimento">
+				<img id="personagemMap" src="./images/player.png" alt="personagem">
+			</div>
 		</div>
 	</div>
 </main>

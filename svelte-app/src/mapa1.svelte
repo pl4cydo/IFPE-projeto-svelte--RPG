@@ -6,25 +6,25 @@ document.onkeydown = function(event) {
     switch (event.keyCode) {
        case 37:
             // alert('Left key pressed');
-            if (eixoX != 953) {
+            if (eixoX != 57) {
             	paraEsquerda()
             }
           break;
        case 38:
             // alert('Up key pressed');
-            if (eixoY != 371) {
+            if (eixoY != 340) {
             	paraCima()
             }
           break;
        case 39:
             // alert('Right key pressed');
-            if (eixoX != 791) {
+            if (eixoX != 219) {
             	paraDireita()
             }
           break;
        case 40:
             // alert('Down key pressed');
-            if (eixoY != 539) {
+            if (eixoY != 508) {
             	paraBaixo()	
             }
           break;
@@ -34,8 +34,8 @@ document.onkeydown = function(event) {
     }
 };
 
-    let eixoX = 791;
-    let eixoY = 539;
+    let eixoX = 219;
+    let eixoY = 508;
  
 	function paraCima() {
 	    eixoY -= 56;
@@ -50,28 +50,28 @@ document.onkeydown = function(event) {
 		maior()
 	}
 	function paraEsquerda() {
-		eixoX += 54;
-	    console.log(eixoX)
-		movimento.style.right = eixoX + "px" 
+		eixoX -= 54;
+	    	console.log(eixoX)
+		movimento.style.left = eixoX + "px" 
 		movimento.style.transform = "scaleX(-1)"
 		maior()
 	}
 	function paraDireita() {
-		eixoX -= 54;
+		eixoX += 54;
 	    console.log(eixoX)
-		movimento.style.right = eixoX + "px" 
+		movimento.style.left = eixoX + "px" 
 		movimento.style.transform = "scaleX(1.0)"
 		maior()
 	}
 	function entrarBatalha1() {
-		if (eixoY == 371 && (eixoX == 845 || eixoX == 899)) {
+		if (eixoY == 340 && (eixoX == 111 || eixoX == 165)) {
 			// alert('enter')
 			trocarEstadoDoJogo('batalha')
         }
 	}
 
 	function maior() {
-		if (eixoY == 371 && (eixoX == 845 || eixoX == 899)) {
+		if (eixoY == 340 && (eixoX == 111 || eixoX == 165)) {
 			integracao.style.height = "90px"
 		} else {
 			integracao.style.height = "70px"
@@ -121,21 +121,22 @@ document.onkeydown = function(event) {
 			{/each}
 
 		</table>
-		<img id="caminhao2" src="./images/caminhão2.0.png" alt="caminhão">
-		<img id="caminhao1" src="./images/caminhão1.0.png" alt="caminhão">
-		<!-- <img class="carro2" src="./images/carro2.png" alt="carro"> -->
-		<div id="integracao">
-			<img src="./images/integracao.png" alt="integracao">
-			<p>Integração<br>de<br> Igarassu</p>
-		</div>
-		<img class="home" src="./images/home.png" alt="home">
-		<div id="ifpe">
-			<img src="./images/ifpe.png" alt="ifpe">
-			<p>IFPE<br>Campus<br>Igarassu</p>
-		</div>
-		
-		<div id="movimento">
-			<img id="personagemMap" src="./images/player.png" alt="personagem">
+		<div id="blocoMapa">
+			<img id="caminhao2" src="./images/caminhão2.0.png" alt="caminhão">
+			<img id="caminhao1" src="./images/caminhão1.0.png" alt="caminhão">
+			<!-- <img class="carro2" src="./images/carro2.png" alt="carro"> -->
+			<div id="integracao">
+				<img src="./images/integracao.png" alt="integracao">
+				<p>Integração<br>de<br> Igarassu</p>
+			</div>
+			<img class="home" src="./images/home.png" alt="home">
+			<div id="ifpe">
+				<img src="./images/ifpe.png" alt="ifpe">
+				<p>IFPE<br>Campus<br>Igarassu</p>
+			</div>
+			<div id="movimento">
+				<img id="personagemMap" src="./images/player.png" alt="personagem">
+			</div>
 		</div>
 	</div>
 </main>
