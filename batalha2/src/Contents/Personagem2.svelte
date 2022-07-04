@@ -1,7 +1,7 @@
 <script type="text/javascript">
-	import { Estudante } from "./Vida.js"
-	import { Caminhoneiro } from "./Vida.js"
-	import { estadoTurno } from "./Vida.js"
+	import { Estudante } from "./Vida2.js"
+	import { Caminhoneiro } from "./Vida2.js"
+	import { estadoTurno } from "./Vida2.js"
 
 
 	// MENU BATALHA
@@ -20,18 +20,18 @@
 
 	let menuEixoY = 399;
 	document.onkeydown = function(event) {
-    switch (event.keyCode) {
-       case 38:
-            // alert('Up key pressed');
-            	// paraCima()
-            menuParaCima()
-          break;
-       case 40:
-            // alert('Down key pressed');
-            	// paraBaixo()	
-            menuParaBaixo()
-          break;
-       case 13:
+    		switch (event.keyCode) {
+	       case 38:
+	            // alert('Up key pressed');
+	            	// paraCima()
+	            menuParaCima()
+	          break;
+	       case 40:
+	            // alert('Down key pressed');
+	            	// paraBaixo()	
+	            menuParaBaixo()
+	          break;
+	       case 13:
        		if ($estadoTurno != false) {
 	       		if (menuEixoY == 399) {
 	       			murro()
@@ -44,7 +44,7 @@
        		// alert("ENTER")
        		// entrarAtaque()
        	  break;
-    	}
+    		}
 	};
 
 	function menuParaBaixo() {
@@ -69,32 +69,32 @@
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
 		if ($Caminhoneiro.vidaCarlos > 0) {
-			if (aleatorio < 8) {
-				inf2.innerHTML = $Caminhoneiro.nome + " Tentou atacar com Arranque "
+			if (aleatorio < 7) {
+				inf2.innerHTML = $Caminhoneiro.nome + " Tentou atacar com Tapa "
 				setTimeout(function(){
-					arranque()
+					tapa()
 				},2000);
 			} else {
-				inf2.innerHTML = $Caminhoneiro.nome + " Tentou Queimar a Parada "
+				inf2.innerHTML = $Caminhoneiro.nome + " Tentou Jogar a Garrafa "
 				setTimeout(function(){
-					queimarParada()	
+					jogarGarrafa()	
 				},2000); 
 			}
 		}
 	}
 
-	function arranque() {
+	function tapa() {
 		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 10;
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 15;
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Arranque com " + dano + " de dano"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Tapa com " + dano + " de dano"
 			},2000);
 			setTimeout(function(){
     			vidaEstudante.style.width = $Estudante.vida + "px"
 			},4000);
-			movimentoArranque()
+			movimentotapa()
 		} else {
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
@@ -120,35 +120,39 @@
 		trocarTurno()
 		
 	}
-	function movimentoArranque() {
-		personagemBus2.style.transform = "rotate(-10deg)"
+	function movimentotapa() {
 		setTimeout(function(){
 			personagemBus2.style.left = "300px"
 		},400);
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotate(0deg)"
-			personagem.style.transform = "rotate(45deg)"
-			personagem.style.top = "250px"
+			personagemBus2.style.transform = "rotateY(45deg)"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.left = "10px"
+			personagemBus2.style.transform = "rotateY(-45deg)"
+			// personagem.style.transform = "rotateY(deg)"
+			
 		},1000);
 		setTimeout(function(){
+			personagem.style.top = "270px"
+		},1400)
+		setTimeout(function(){
+			personagemBus2.style.transform = "rotateY(0deg)"
+			personagemBus2.style.left = "200px"
 			personagem.style.transform = "rotate(0deg)"
 			personagem.style.top = "230px"
 		},1500);
 	}
 
-	function queimarParada() {
-		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
+	function jogarGarrafa() {
+		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto + 20
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 30
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 40
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " Queimou a parada e causou " + dano + " de dano"
+    			inf2.innerHTML = $Caminhoneiro.nome + " Deu-le uma garrafada e causou " + dano + " de dano"
     			vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
-			movimentoQueimarParada()
+			movimentojogarGarrafa()
 		} else {
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
@@ -172,16 +176,31 @@
 		},6000);
 		trocarTurno()
 	}
-	function movimentoQueimarParada() {
-		personagemBus2.style.left = "400px"
+	function movimentojogarGarrafa() {
+		personagemBus2.style.transform = "rotate(-25deg)"
+		garrafa.style.visibility = "visible"
 		setTimeout(function(){
-			personagem.style.transform = "rotate(45deg)"
-			personagem.style.top = "250px"
+			personagemBus2.style.transform = "rotate(25deg)"
+			// personagem.style.transform = "rotate(45deg)"
+			// personagem.style.top = "250px"
+			garrafa.style.left = "520px"
+			garrafa.style.top = "320px"
+			garrafa.style.transform = "rotate(90deg)"
+			garrafa.style.transform = "rotate(180deg)"
+			garrafa.style.transform = "rotate(270deg)"
+
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.left = "10px"
+			personagem.style.transform = "rotate(45deg)"
+		},900)
+		setTimeout(function(){
+			personagemBus2.style.transform = "rotate(0deg)"
 		},1000);
 		setTimeout(function(){
+			garrafa.style.visibility = "hidden"
+			garrafa.style.left = "270px"
+			garrafa.style.top = "160px"
+			garrafa.style.transform = "rotate(0deg)"
 			personagem.style.transform = "rotate(0deg)"
 			personagem.style.top = "230px"
 		},1500);
@@ -212,9 +231,9 @@
 		if (acerto >= $Caminhoneiro.def){
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10;
 			setTimeout(function(){
-    			inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+    				inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Caminhoneiro.vidaCarlos -= dano;
-    			barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+    				barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
     			movimentoMurro()
 			},2000);
 			contadorPower++
@@ -242,12 +261,12 @@
 		bottonIformacao.style.visibility = "hidden"
 	}
 	function movimentoMurro() {
-		personagem.style.left = "0"
+		personagem.style.left = "-100px"
 		setTimeout(function(){
-    		personagemBus2.style.top = "190px"
+    			personagemBus2.style.top = "190px"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.top = "170px"
+			personagemBus2.style.top = "115px"
 		},600);
 		setTimeout(function(){
 			personagem.style.left = "100px"
@@ -294,7 +313,7 @@
 	}
 
 
-	let contadorPower = 0;
+	let contadorPower = 4;
 	function manaCor() {
 		if (contadorPower == 0) {
 			mana.style.width = "0%"
@@ -353,7 +372,7 @@
 		trocarTurno()
 	} 
 	function movimentoPower() {
-		personagem.style.left = "0"
+		personagem.style.left = "-100px"
 		personagem.style.transform = "rotate(55deg)"
 		personagem.style.top = "130px"
 
@@ -362,7 +381,7 @@
     		personagemBus2.style.transform = "rotate(5deg)"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.top = "170px"
+			personagemBus2.style.top = "115px"
 			personagemBus2.style.transform = "rotate(0deg)"
 		},700);
 		setTimeout(function(){
@@ -398,7 +417,10 @@
 		</div>	
 	</div>
 	<div id="personagemBus2">
-		<img id="imagemBus2" src="./images/truckdriver.png" alt="Caminhoneiro">
+		<img id="imagemCaminhoneiro" src="./images/truckdriver.png" alt="Caminhoneiro">
+	</div>
+	<div id="garrafa">
+		<img id="garrafaImg" src="./images/garrafa.png" alt="garrafa">
 	</div>
 	<div id="bottonIformacao22">
 		<p id="inf2">O {$Caminhoneiro.nome} apareceu, lute para conseguir subir no ônibus.</p>

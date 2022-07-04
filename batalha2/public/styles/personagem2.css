@@ -11,15 +11,31 @@
 		margin: 3px;
 		width: 200px;
 		height: 250px;
-		top: 120px;
+		top: 115px;
 		left: 200px;
 		position: absolute;
-		overflow: hidden;
+		/*overflow: hidden;*/
 		transition: 0.2s ease;
+		transform:rotateY(0deg) ;
+		display: flex;
+		justify-content: center;
 	}
-	#personagemBus2 img {
+	#imagemCaminhoneiro {
 		width: 100%;
 	} 
+	#garrafa {
+		top: 160px;
+		left: 270px;
+		position: absolute;
+		transition: 0.4s ease;
+		visibility: hidden;
+	}
+	#garrafaImg {
+		height: 120px;
+		position: absolute;
+
+	}
+
 	#barraInformacoesBus2 {
 		/*border: 1px solid black;*/
 		margin: 3px;
@@ -104,6 +120,7 @@
 		left: 100px;
 		position: absolute;
 		transition: 0.1s ease;
+		transition: rotateY(0deg);
 	}
 	#personagem img {
 		width: 100%;

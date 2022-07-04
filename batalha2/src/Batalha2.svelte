@@ -1,8 +1,8 @@
 <script type="text/javascript">
 	import Personagem2 from "./Contents/Personagem2.svelte"
-	import { Estudante } from "./Contents/Vida.js"
-	import { Caminhoneiro } from "./Contents/Vida.js"
-	import { estadoTurno } from "./Contents/Vida.js"
+	import { Estudante } from "./Contents/Vida2.js"
+	import { Caminhoneiro } from "./Contents/Vida2.js"
+	import { estadoTurno } from "./Contents/Vida2.js"
 	
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
