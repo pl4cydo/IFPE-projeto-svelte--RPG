@@ -88,14 +88,16 @@
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*10) + $Bus.ataque + 10;
+			let dano = Math.round(Math.random()*10) + $Bus.ataque + 10; // 10
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
 			},2000);
-			setTimeout(function(){
-    			vidaEstudante3.style.width = $Estudante.vida + "px"
-			},4000);
+			if ($Estudante.vida < 0) {
+				vidaEstudante3.style.width = "0px"
+			} else {
+				vidaEstudante3.style.width = $Estudante.vida + "px"
+			}
 			movimentoArranque()
 		} else {
 			setTimeout(function(){
@@ -147,25 +149,28 @@
 			let dano = Math.round(Math.random()*20) + $Bus.ataque + 30
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
-    			vidaEstudante3.style.width = $Estudante.vida + "px"
+    				inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
+	    			if ($Estudante.vida < 0) {
+					vidaEstudante3.style.width = "0px"
+				} else {
+					vidaEstudante3.style.width = $Estudante.vida + "px"
+				}
 			},2000);
 			movimentoQueimarParada()
 		} else {
 			setTimeout(function(){
-    			inf.innerHTML = $Bus.nome + " Errou!"
+    				inf.innerHTML = $Bus.nome + " Errou!"
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
 			bottonIformacao2.style.visibility = "hidden"
-
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
 				fimBus()
 			},3000);
 		}
 		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
+    			inf.innerHTML = "Fim do turno"
 		},5000);
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
@@ -212,11 +217,15 @@
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10; //10
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;
-    			barraVidaBus.style.width = $Bus.vidabus + "px"
+			if ($Bus.vidabus < 0) {
+				barraVidaBus.style.width = "0px"
+			} else {
+				barraVidaBus.style.width = $Bus.vidabus + "px"
+			}	
     			movimentoMurro()
 			},2000);
 			contadorPower++
@@ -326,7 +335,11 @@
 			setTimeout(function(){
 				$Bus.vidabus -= dano;
     			inf.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
-    			barraVidaBus.style.width = $Bus.vidabus + "px"
+    			if ($Bus.vidabus < 0) {
+				barraVidaBus.style.width = "0px"
+			} else {
+				barraVidaBus.style.width = $Bus.vidabus + "px"
+			}	
     			movimentoPower() 
 			},4000);
 		} else {

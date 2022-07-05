@@ -87,15 +87,19 @@
 	function tapa() {
 		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 15;
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 15; //15
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Tapa com " + dano + " de dano"
 			},2000);
-			setTimeout(function(){
-    			vidaEstudante.style.width = $Estudante.vida + "px"
-			},4000);
 			movimentotapa()
+			setTimeout(function() {
+				if ($Estudante.vida < 0) {
+				vidaEstudante.style.width = "0px"
+				} else {
+					vidaEstudante.style.width = $Estudante.vida + "px"
+				}	
+			}, 3000)
 		} else {
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
@@ -107,7 +111,7 @@
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
 				fimBus()
-			},3000);
+			},5000);
 		}
 		setTimeout(function(){
     		inf2.innerHTML = "Fim do turno"
@@ -115,8 +119,8 @@
 		
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
-    				bottonIformacao.style.visibility = "visible"
-    			}
+    			bottonIformacao.style.visibility = "visible"
+    		}
 		},6000);
 		trocarTurno()
 		
@@ -151,7 +155,11 @@
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " deu-lhe uma garrafada e causou " + dano + " de dano"
-    			vidaEstudante.style.width = $Estudante.vida + "px"
+    			if ($Estudante.vida < 0) {
+					vidaEstudante.style.width = "0px"
+				} else {
+					vidaEstudante.style.width = $Estudante.vida + "px"
+				}
 			},2000);
 			movimentojogarGarrafa()
 		} else {
@@ -228,11 +236,15 @@
 		inf2.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Caminhoneiro.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20; //20
 			setTimeout(function(){
-    				inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+    			inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Caminhoneiro.vidaCarlos -= dano;
-    				barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+				if ($Caminhoneiro.vidaCarlos < 0) {
+					barraVidaBus2.style.width = "0px"
+				} else {
+					barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+				}
     			movimentoMurro()
 			},2000);
 			contadorPower++
@@ -344,7 +356,11 @@
 			setTimeout(function(){
 				$Caminhoneiro.vidaCarlos -= dano;
     			inf2.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
-    			barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+    			if ($Caminhoneiro.vidaCarlos < 0) {
+					barraVidaBus2.style.width = "0px"
+				} else {
+					barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+				}
     			movimentoPower() 
 			},4000);
 		} else {
@@ -402,7 +418,7 @@
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
-    		trocarEstadoDoJogo('mapa2')
+    		trocarEstadoDoJogo('mapa3')
 		},5000);
 	}
 
