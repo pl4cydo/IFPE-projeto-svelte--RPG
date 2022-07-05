@@ -1,11 +1,12 @@
 <script>
 	import Menu from "./Menu.svelte"
 	import Mapa1 from "./mapa1.svelte"
+	import Mapa2 from "./mapa2.svelte"	
+	import Mapa3 from "./mapa3.svelte"
 	import Batalha1 from "./Batalha.svelte"
 	import Batalha2 from "./Batalha2.svelte"
 	import { estado } from './Contents/Estado.js'
 	import Sobre from "./sobre.svelte"
-	import Mapa2 from "./mapa2.svelte"	
 	import Dev from "./Dev.svelte"
 </script>
 
@@ -15,7 +16,7 @@
 <!-- <Mapa2/> -->
 <!-- <Batalha1/> -->
 <!-- <Sobre/> -->
-
+<!-- <Mapa3/> -->
 
 {#if $estado === 'menu'}
 	<Menu/>
@@ -23,6 +24,8 @@
 	<Mapa1/>
 {:else if $estado === 'mapa2'}
 	<Mapa2/>
+{:else if $estado === 'mapa2'}
+	<Mapa3/>
 {:else if $estado === 'batalha'}
 	<Batalha1/>
 {:else if $estado === 'batalha2'}
@@ -31,4 +34,4 @@
 	<Sobre/>
 {/if}
 
-<Dev/>
+<!-- <Dev/> -->
