@@ -33,7 +33,7 @@
             	// paraBaixo()	
             menuParaBaixo()
           break;
-       case 13:
+       case 32:
        		if ($estadoTurno != false) {
 	       		if (menuEixoY == 399) {
 	       			murro()
@@ -88,7 +88,7 @@
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Bus.ataque + 10;
+			let dano = Math.round(Math.random()*10) + $Bus.ataque + 10;
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
@@ -210,9 +210,9 @@
 	
 	function murro() {
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
-		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 20;
+		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Bus.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 100;
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10;
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Bus.vidabus -= dano;
@@ -234,9 +234,9 @@
 				bottonIformacao2.style.visibility = "hidden"
 				setTimeout(function(){
     					fim()
-    				},4000);
+    				},6000);
 			}
-		},2000);
+		},5000);
 		setTimeout(function(){
     			ataqueAleatorio()
 		},5000);

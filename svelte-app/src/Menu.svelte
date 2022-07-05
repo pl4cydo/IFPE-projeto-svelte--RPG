@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	
+	import Dev from "./Dev.svelte"
 	import { estado } from './Contents/Estado.js'
 	import { trocarEstadoDoJogo } from './Contents/Estado.js'
 </script>

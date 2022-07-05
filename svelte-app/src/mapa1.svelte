@@ -28,7 +28,7 @@ document.onkeydown = function(event) {
             	paraBaixo()	
             }
           break;
-       case 13:
+       case 32:
        		entrarBatalha1()
        	  break;
     }

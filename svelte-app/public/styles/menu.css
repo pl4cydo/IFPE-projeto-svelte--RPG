@@ -9,6 +9,7 @@ body {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
+		position: absolute;
 	}
 	.bloco {
 		padding: 0;
@@ -17,6 +18,8 @@ body {
 		border-color: darkcyan;
 		width: 900px;
 		height: 600px;
+		justify-content: center;
+		align-items: center;
 	}
 	.titulo {
 		padding: 0;

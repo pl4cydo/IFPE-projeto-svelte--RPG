@@ -28,7 +28,7 @@ document.onkeydown = function(event) {
             	paraBaixo()	
             }
           break;
-       case 13:
+       case 32:
        		entrarBatalha1()
        	  break;
     }
@@ -66,7 +66,7 @@ document.onkeydown = function(event) {
 	function entrarBatalha1() {
 		if ((eixoY == 228 || eixoY == 284) && eixoX == 327) {
 			// alert('enter')
-			trocarEstadoDoJogo('batalha')
+			trocarEstadoDoJogo('batalha2')
         }
 	}
 

@@ -2,6 +2,7 @@
 	import { Estudante } from "./Vida2.js"
 	import { Caminhoneiro } from "./Vida2.js"
 	import { estadoTurno } from "./Vida2.js"
+	import { trocarEstadoDoJogo } from './Estado.js'
 
 
 	// MENU BATALHA
@@ -31,7 +32,7 @@
 	            	// paraBaixo()	
 	            menuParaBaixo()
 	          break;
-	       case 13:
+	       case 32:
        		if ($estadoTurno != false) {
 	       		if (menuEixoY == 399) {
 	       			murro()
@@ -401,7 +402,7 @@
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
-    			trocarEstadoDoJogo('mapa2')
+    		trocarEstadoDoJogo('mapa2')
 		},5000);
 	}
 
