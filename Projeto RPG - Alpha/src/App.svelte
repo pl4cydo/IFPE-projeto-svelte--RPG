@@ -14,13 +14,13 @@
 <!-- <Menu/> -->
 <!-- <Mapa1/> -->
 <!-- <Mapa2/> -->
-<!-- <Mapa3/> -->
+<Mapa3/>
 <!-- <Batalha1/> -->
 <!-- <Batalha2/> -->
 <!-- <Sobre/> -->
 
-<!-- 
-{#if $estado === 'menu'}
+
+<!-- {#if $estado === 'menu'}
 	<Menu/>
 {:else if $estado === 'jogar'}
 	<Mapa1/>
