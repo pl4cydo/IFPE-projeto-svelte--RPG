@@ -210,8 +210,13 @@
 		width: 150px;
 		height: 35px;
 		position: absolute;
-		border: 5px solid;
+		/*border: 5px solid;
 		border-radius: 7px;
 		border-color: cyan;
-		box-shadow:  3px 3px grey;
+		box-shadow:  3px 3px grey;*/
+	}
+	#mao {
+		height: 130%;
+		margin-top: 0px;
+		margin-left: -30px;
 	}

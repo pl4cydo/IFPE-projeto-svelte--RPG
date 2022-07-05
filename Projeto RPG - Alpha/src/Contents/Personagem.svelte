@@ -448,7 +448,9 @@
 		<div class="divAtaques">Murro</div>
 		<div class="divAtaques">Lanche da Tia</div>
 		<div class="divAtaques">'Vuadora'</div>
-		<div id="menuAtaques"></div>
+		<div id="menuAtaques">
+			<img id="mao" src="./images/hand.gif" alt="mãozinha">
+		</div>
 		<div id="fimBatalha">
 			<h1>YOU WIN!</h1>
 			<p> Agora suba no ônibus derrotado e siga para o IFPE</p>
