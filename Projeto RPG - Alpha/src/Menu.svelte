@@ -22,7 +22,7 @@
 				<h1>SOBRE</h1>
 			</div>
 			<div class="projeto">
-				<h1>Demo Weak 2022.1</h1>
+				<h1>Demo Week 2022.1</h1>
 			</div>
 		</div>
 	</div>

@@ -45,7 +45,7 @@
 		border: 1px solid black;
 		top: 190px;
 		left: 1500px;
-		visibility: hidden;
+		visibility: visible;
 	}
 	.listaDev {
 		margin: 30px;

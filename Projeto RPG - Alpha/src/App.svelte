@@ -16,10 +16,11 @@
 <!-- <Mapa2/> -->
 <!-- <Mapa3/> -->
 <!-- <Batalha1/> -->
-<Batalha2/>
+<!-- <Batalha2/> -->
 <!-- <Sobre/> -->
 
-<!-- {#if $estado === 'menu'}
+
+{#if $estado === 'menu'}
 	<Menu/>
 {:else if $estado === 'jogar'}
 	<Mapa1/>
@@ -33,6 +34,42 @@
 	<Batalha2/>
 {:else if $estado === 'sobre'}
 	<Sobre/>
-{/if} -->
+{/if}
 
-<!-- <Dev/> -->
+
+
+
+
+
+<!-- <div class="containerApp">
+	<div class="blocoApp">
+		<Dev/>
+	</div>
+</div> -->
+
+
+
+
+
+
+<style type="text/css">
+	.containerApp {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		/*flex-direction: row;*/
+		justify-content: center;
+		align-items: center;
+	}
+	.blocoApp {
+		padding: 0;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 1100px;
+		border: 1px solid;
+		border-color: red;
+		width: 200px;
+		height: 600px;
+	}
+</style>
