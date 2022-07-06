@@ -1,15 +1,15 @@
 <script type="text/javascript">
-	import Personagem2 from "./Contents/Personagem2.svelte"
-	import { Estudante } from "./Contents/Vida2.js"
-	import { Caminhoneiro } from "./Contents/Vida2.js"
-	import { estadoTurno } from "./Contents/Vida2.js"
+	import Personagem2 from "./Contents/Personagem3.svelte"
+	import { Estudante } from "./Contents/Vida3.js"
+	import { Messiah } from "./Contents/Vida3.js"
+	import { estadoTurno } from "./Contents/Vida3.js"
 	
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
 		bottonIformacao.style.visibility = "visible"
-		barraInformacoesBus2.style.visibility = "visible"
+		barraInformacoesBus3.style.visibility = "visible"
 		InicioBatalha.style.visibility = "hidden"
-		bottonIformacao22.style.width = "420px"
+		bottonIformacao23.style.width = "420px"
 		$estadoTurno = true;
 
 	}
@@ -72,7 +72,7 @@
 		border-radius: 7px;
 		border-color: white;
 		box-shadow:  3px 3px grey;
-		/*overflow: hidden;*/
+	/*	overflow: hidden;*/
 	}
 
 	.bottonRow {

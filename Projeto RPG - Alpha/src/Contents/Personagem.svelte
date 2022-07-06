@@ -71,7 +71,7 @@
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
 		if ($Bus.vidabus > 0) {
-			if (aleatorio < 8) {
+			if (aleatorio < 9) {
 				inf.innerHTML = $Bus.nome + " Tentou atacar com Arranque "
 				setTimeout(function(){
 					arranque()
@@ -88,16 +88,18 @@
 	function arranque() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*10) + $Bus.ataque + 10; // 10
+			let dano = Math.round(Math.random()*15) + $Bus.ataque + 10; // 10
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf.innerHTML = $Bus.nome + " Acertou um Arranque com " + dano + " de dano"
 			},2000);
-			if ($Estudante.vida < 0) {
-				vidaEstudante3.style.width = "0px"
-			} else {
-				vidaEstudante3.style.width = $Estudante.vida + "px"
-			}
+			setTimeout(function(){
+				if ($Estudante.vida < 0) {
+					vidaEstudante3.style.width = "0px"
+				} else {
+					vidaEstudante3.style.width = $Estudante.vida + "px"
+				}
+			},3000)
 			movimentoArranque()
 		} else {
 			setTimeout(function(){
@@ -146,15 +148,17 @@
 	function queimarParada() {
 		let acerto = Math.round(Math.random()*20) + $Bus.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Bus.ataque + 30
+			let dano = Math.round(Math.random()*20) + $Bus.ataque + 30;
 			$Estudante.vida -= dano
 			setTimeout(function(){
     				inf.innerHTML = $Bus.nome + " Queimou a parada e causou " + dano + " de dano"
-	    			if ($Estudante.vida < 0) {
-					vidaEstudante3.style.width = "0px"
-				} else {
-					vidaEstudante3.style.width = $Estudante.vida + "px"
-				}
+				setTimeout(function(){
+					if ($Estudante.vida < 0) {
+						vidaEstudante3.style.width = "0px"
+					} else {
+						vidaEstudante3.style.width = $Estudante.vida + "px"
+					}
+				},3000)
 			},2000);
 			movimentoQueimarParada()
 		} else {
@@ -220,7 +224,7 @@
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10; //10
 			setTimeout(function(){
     			inf.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
-				$Bus.vidabus -= dano;
+			$Bus.vidabus -= dano;
 			if ($Bus.vidabus < 0) {
 				barraVidaBus.style.width = "0px"
 			} else {
@@ -280,6 +284,7 @@
 			movimentoCura()
 			setTimeout(function(){
 				inf.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+
 				vidaEstudante3.style.width = $Estudante.vida + "px"
 			},2000);
 			contadorPower++
@@ -333,9 +338,9 @@
 		if (acerto >= $Bus.def){
 			let dano = Math.round(Math.random()*20) + $Estudante.ataque + 50;
 			setTimeout(function(){
-				$Bus.vidabus -= dano;
+			$Bus.vidabus -= dano;
     			inf.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
-    			if ($Bus.vidabus < 0) {
+			if ($Bus.vidabus < 0) {
 				barraVidaBus.style.width = "0px"
 			} else {
 				barraVidaBus.style.width = $Bus.vidabus + "px"

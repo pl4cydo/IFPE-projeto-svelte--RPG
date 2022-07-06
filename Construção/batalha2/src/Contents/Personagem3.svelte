@@ -1,7 +1,8 @@
 <script type="text/javascript">
-	import { Estudante } from "./Vida2.js"
-	import { Caminhoneiro } from "./Vida2.js"
-	import { estadoTurno } from "./Vida2.js"
+	import { Estudante } from "./Vida3.js"
+	import { Messiah } from "./Vida3.js"
+	import { estadoTurno } from "./Vida3.js"
+	// import { trocarEstadoDoJogo } from './Estado.js'
 
 
 	// MENU BATALHA
@@ -31,17 +32,18 @@
 	            	// paraBaixo()	
 	            menuParaBaixo()
 	          break;
-	       case 13:
+	       case 32:
        		if ($estadoTurno != false) {
 	       		if (menuEixoY == 399) {
 	       			murro()
 	       		} else if (menuEixoY == 454) {
 	       			curaEstudante()
 	       		} else if (menuEixoY == 509) {
-	       			power()
+	       			carregarPower()
+	       			// power()
 	       		} 
 	       	}
-       		// alert("ENTER")
+       		// alert("SPACE")
        		// entrarAtaque()
        	  break;
     		}
@@ -64,102 +66,112 @@
 
 
 
-	// ************************ Caminhoneiro ************************
+	// ************************ Messiah ************************
 
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
-		if ($Caminhoneiro.vidaCarlos > 0) {
-			if (aleatorio < 7) {
-				inf2.innerHTML = $Caminhoneiro.nome + " Tentou atacar com Tapa "
+		if ($Messiah.vidaCarlos > 0) {
+			if (aleatorio < 1) {
+				inf3.innerHTML = $Messiah.nome + " Tentou Cortar a Verba"
 				setTimeout(function(){
-					tapa()
+					corteVerba()
 				},2000);
 			} else {
-				inf2.innerHTML = $Caminhoneiro.nome + " Tentou Jogar a Garrafa "
+				inf3.innerHTML = $Messiah.nome + " Tentou tocar o berrante "
 				setTimeout(function(){
-					jogarGarrafa()	
+					motociata()	
 				},2000); 
 			}
 		}
 	}
 
-	function tapa() {
-		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
+	function corteVerba() {
+		let acerto = Math.round(Math.random()*20) + $Messiah.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 15;
+			let dano = Math.round(Math.random()*20) + $Messiah.ataque + 10; //15
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Tapa com " + dano + " de dano"
+    			inf3.innerHTML = $Messiah.nome + " Cortou sua verba e causou " + dano + " de dano"
 			},2000);
-			setTimeout(function(){
-    			vidaEstudante.style.width = $Estudante.vida + "px"
-			},4000);
-			movimentotapa()
+			movimentocortedeverba()
+			setTimeout(function() {
+				if ($Estudante.vida < 0) {
+					vidaEstudante.style.width = "0px"
+				} else {
+					vidaEstudante.style.width = $Estudante.vida + "px"
+				}	
+			}, 3000)
 		} else {
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
+    			inf3.innerHTML = $Messiah.nome + " Errou!"
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
-			bottonIformacao22.style.visibility = "hidden"
+			bottonIformacao23.style.visibility = "hidden"
 
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
 				fimBus()
-			},3000);
+			},5000);
 		}
 		setTimeout(function(){
-    		inf2.innerHTML = "Fim do turno"
+    		inf3.innerHTML = "Fim do turno"
 		},5000);
 		
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
-    				bottonIformacao.style.visibility = "visible"
-    			}
+    			bottonIformacao.style.visibility = "visible"
+    		}
 		},6000);
 		trocarTurno()
 		
 	}
-	function movimentotapa() {
+	function movimentocortedeverba() {
 		setTimeout(function(){
-			personagemBus2.style.left = "400px"
+			personagemBus3.style.left = "400px"
+			dinheiro.style.left = "600px"
 		},400);
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotateY(45deg)"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotateY(-45deg)"
-			// personagem.style.transform = "rotateY(deg)"
+			dinheiro.style.visibility = "visible"
 			
 		},1000);
 		setTimeout(function(){
 			personagem.style.top = "270px"
 		},1400)
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotateY(0deg)"
-			personagemBus2.style.left = "200px"
-			personagem.style.transform = "rotate(0deg)"
+			personagemBus3.style.left = "150px"
+			dinheiro.style.left = "200px"
 			personagem.style.top = "230px"
 		},1500);
+		setTimeout(function(){
+			dinheiro.style.visibility = "hidden"
+		},1900);
+
 	}
 
-	function jogarGarrafa() {
-		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
+	function motociata() {
+		let acerto = Math.round(Math.random()*20) + $Messiah.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 20;
+			let dano = Math.round(Math.random()*20) + $Messiah.ataque + 20;
 			$Estudante.vida -= dano
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " deu-lhe uma garrafada e causou " + dano + " de dano"
-    			vidaEstudante.style.width = $Estudante.vida + "px"
+    			inf3.innerHTML = $Messiah.nome + " Chamou a motociata e causou " + dano + " de dano"
+    			if ($Estudante.vida < 0) {
+					vidaEstudante.style.width = "0px"
+				} else {
+					vidaEstudante.style.width = $Estudante.vida + "px"
+				}
 			},2000);
-			movimentojogarGarrafa()
+			movimentomotociata()
 		} else {
 			setTimeout(function(){
-    			inf2.innerHTML = $Caminhoneiro.nome + " Errou!"
+    			inf3.innerHTML = $Messiah.nome + " Errou!"
 			},2000);
 		}
 		if ($Estudante.vida <= 0) {
-			bottonIformacao22.style.visibility = "hidden"
+			bottonIformacao23.style.visibility = "hidden"
 
 			setTimeout(function(){
 				personagem.style.transform = "rotate(90deg)"
@@ -167,7 +179,7 @@
 			},3000);
 		}
 		setTimeout(function(){
-    		inf2.innerHTML = "Fim do turno"
+    		inf3.innerHTML = "Fim do turno"
 		},5000);
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
@@ -176,38 +188,31 @@
 		},6000);
 		trocarTurno()
 	}
-	function movimentojogarGarrafa() {
-		personagemBus2.style.transform = "rotate(-25deg)"
-		garrafa.style.visibility = "visible"
+	function movimentomotociata() {
+		personagemBus3.style.left = "100px"
+		motociataImg.style.visibility = "visible"
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotate(25deg)"
-			garrafa.style.left = "520px"
-			garrafa.style.top = "320px"
-			garrafa.style.transform = "rotate(90deg)"
-			garrafa.style.transform = "rotate(180deg)"
-			garrafa.style.transform = "rotate(270deg)"
-
+			motociataImg.style.left = "800px"
 		},500);
 		setTimeout(function(){
 			personagem.style.transform = "rotate(45deg)"
-		},900)
+			// personagem.style.top = "270px"
+		},1500)
 		setTimeout(function(){
-			personagemBus2.style.transform = "rotate(0deg)"
+			motociataImg.style.visibility = "hidden"
 		},1000);
 		setTimeout(function(){
-			garrafa.style.visibility = "hidden"
-			garrafa.style.left = "270px"
-			garrafa.style.top = "160px"
-			garrafa.style.transform = "rotate(0deg)"
+			personagemBus3.style.left = "150px"
 			personagem.style.transform = "rotate(0deg)"
-			personagem.style.top = "230px"
-		},1500);
+			// personagem.style.top = "230px"
+			motociataImg.style.left = "-660px"
+		},3000);
 	} 
 
 	function fimBus() {
 		barraInformacoes.style.visibility = "hidden"
 		bottonIformacao.style.visibility = "hidden"
-		barraInformacoesBus2.style.visibility = "hidden"
+		barraInformacoesBus3.style.visibility = "hidden"
 		fimBatalha.innerHTML = "<h1>YOU LOSE! :)</h1><br><p> Levou 5 faltas, tente a sorte amanhã.</p>"
 		setTimeout(function(){
     			fimBatalha.style.visibility = "visible"
@@ -224,14 +229,18 @@
 	
 	
 	function murro() {
-		inf2.innerHTML = $Estudante.nome + " atacou com Murro"
+		inf3.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
-		if (acerto >= $Caminhoneiro.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20;
+		if (acerto >= $Messiah.def){
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20; //20
 			setTimeout(function(){
-    				inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
-				$Caminhoneiro.vidaCarlos -= dano;
-    				barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+    			inf3.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
+				$Messiah.vidaCarlos -= dano;
+				if ($Messiah.vidaCarlos < 0) {
+					barraVidaBus3.style.width = "0px"
+				} else {
+					barraVidaBus3.style.width = $Messiah.vidaCarlos + "px"
+				}
     			movimentoMurro()
 			},2000);
 			contadorPower++
@@ -240,15 +249,15 @@
 			},2500);
 		} else {
 			setTimeout(function(){
-    				inf2.innerHTML = $Estudante.nome + " errou o ataque!"
+    				inf3.innerHTML = $Estudante.nome + " errou o ataque!"
 			},2000);
 		}
 		setTimeout(function(){
-			if ($Caminhoneiro.vidaCarlos <= 0) {
+			if ($Messiah.vidaCarlos <= 0) {
 				console.log("opa")
-				personagemBus2.style.transform = "rotate(-90deg)"
-				personagemBus2.style.top = "150px"
-				bottonIformacao22.style.visibility = "hidden"
+				personagemBus3.style.transform = "rotate(-90deg)"
+				personagemBus3.style.top = "150px"
+				bottonIformacao23.style.visibility = "hidden"
 				setTimeout(function(){
     					fim()
     				},6000);
@@ -263,10 +272,10 @@
 	function movimentoMurro() {
 		personagem.style.left = "-100px"
 		setTimeout(function(){
-    			personagemBus2.style.top = "190px"
+    		personagemBus3.style.top = "190px"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.top = "115px"
+			personagemBus3.style.top = "68px"
 		},600);
 		setTimeout(function(){
 			personagem.style.left = "100px"
@@ -277,26 +286,25 @@
 	let vidaAtual = $Estudante.vida;
 	function curaEstudante() {
 		if (contadorCura == 0) {
-			inf2.innerHTML = $Estudante.nome + "comeu um lanche e recuperou vida"
+			inf3.innerHTML = $Estudante.nome + "comeu um lanche e recuperou vida"
 			let cura = Math.round(0.3 * vidaAtual)
 			if ((cura + $Estudante.vida) > 194) {
 				$Estudante.vida = 194
-				
 			} else {
 				$Estudante.vida += cura
 			}
 			movimentoCura()
 			setTimeout(function(){
-				inf2.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+				inf3.innerHTML = $Estudante.nome + " curou 30% do HP atual"
 				vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
 			contadorPower++
 			manaCor()
 		} else {
-			inf2.innerHTML = "Opa! a bolsa permanência é para a passagem. Um lanche por dia!"
+			inf3.innerHTML = "Opa! a bolsa permanência é para a passagem. Um lanche por dia!"
 		}
 		setTimeout(function(){
-    		inf2.innerHTML = "Fim do turno"
+    		inf3.innerHTML = "Fim do turno"
 		},8000);	
 		setTimeout(function(){
     		ataqueAleatorio()
@@ -329,36 +337,40 @@
 	}
 	function carregarPower() {
 		if (contadorPower < 4) {
-			inf2.innerHTML = "Falta energia, use outro movimento nesse turno."
+			inf3.innerHTML = "Falta energia, use outro movimento nesse turno."
 		} else {
 			power()
 		}
 	}
 
 	function power() {
-		inf2.innerHTML = $Estudante.nome + " tomou distância"
+		inf3.innerHTML = $Estudante.nome + " tomou distância"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 3;
-		if (acerto >= $Caminhoneiro.def){
+		if (acerto >= $Messiah.def){
 			let dano = Math.round(Math.random()*20) + $Estudante.ataque + 50;
 			setTimeout(function(){
-				$Caminhoneiro.vidaCarlos -= dano;
-    			inf2.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
-    			barraVidaBus2.style.width = $Caminhoneiro.vidaCarlos + "px"
+				$Messiah.vidaCarlos -= dano;
+    			inf3.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
+    			if ($Messiah.vidaCarlos < 0) {
+					barraVidaBus3.style.width = "0px"
+				} else {
+					barraVidaBus3.style.width = $Messiah.vidaCarlos + "px"
+				}
     			movimentoPower() 
 			},4000);
 		} else {
 			setTimeout(function(){
-    			inf2.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
+    			inf3.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
 			},4000);
 		}
+		// setTimeout(function(){
+  //   		inf3.innerHTML = "Fim do turno"
+		// },7000);
 		setTimeout(function(){
-    		inf2.innerHTML = "Fim do turno"
-		},7000);
-		setTimeout(function(){
-			if ($Caminhoneiro.vidaCarlos <= 0) {
+			if ($Messiah.vidaCarlos <= 0) {
 				console.log("opa")
-				personagemBus2.style.transform = "rotate(-90deg)"
-				personagemBus2.style.top = "150px"
+				personagemBus3.style.transform = "rotate(-90deg)"
+				personagemBus3.style.top = "150px"
 				bottonIformacao22.style.visibility = "hidden"
 				setTimeout(function(){
     					fim()
@@ -367,7 +379,7 @@
 		},5000);
 		setTimeout(function(){
     			ataqueAleatorio()
-		},5000);
+		},7000);
 		bottonIformacao.style.visibility = "hidden"
 		contadorPower = 0;
 		manaCor()
@@ -379,12 +391,12 @@
 		personagem.style.top = "130px"
 
 		setTimeout(function(){
-    		personagemBus2.style.top = "190px"
-    		personagemBus2.style.transform = "rotate(5deg)"
+    		personagemBus3.style.top = "190px"
+    		personagemBus3.style.transform = "rotate(5deg)"
 		},500);
 		setTimeout(function(){
-			personagemBus2.style.top = "115px"
-			personagemBus2.style.transform = "rotate(0deg)"
+			personagemBus3.style.top = "115px"
+			personagemBus3.style.transform = "rotate(0deg)"
 		},700);
 		setTimeout(function(){
 			personagem.style.left = "100px"
@@ -397,35 +409,38 @@
 	function fim() {
 		barraInformacoes.style.visibility = "hidden"
 		bottonIformacao.style.visibility = "hidden"
-		barraInformacoesBus2.style.visibility = "hidden"
+		barraInformacoesBus3.style.visibility = "hidden"
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
-    			trocarEstadoDoJogo('mapa2')
+    		trocarEstadoDoJogo('mapa3')
 		},5000);
 	}
 
 
 </script>
-<link rel="stylesheet" type="text/css" href="./styles/personagem2.css">
+<link rel="stylesheet" type="text/css" href="./styles/personagem3.css">
 
-<!-- ************************ Caminhoneiro ************************ -->
+<!-- ************************ Messiah ************************ -->
 <div class="bloco2">
-	<div id="barraInformacoesBus2">
-		<p class="nomeBus2">{$Caminhoneiro.nome}</p>
-		<p class="nomeBus2">HP:{$Caminhoneiro.vidaCarlos}</p>
-		<div class="contornoBus2">
-			<div  id="barraVidaBus2"></div>
+	<div id="barraInformacoesBus3">
+		<p class="nomeBus3">{$Messiah.nome}</p>
+		<p class="nomeBus3">HP:</p>
+		<div class="contornoBus3">
+			<div  id="barraVidaBus3"></div>
 		</div>	
 	</div>
-	<div id="personagemBus2">
-		<img id="imagemCaminhoneiro" src="./images/truckdriver.png" alt="Caminhoneiro">
+	<div id="personagemBus3">
+		<img id="imagemMessiah" src="./images/bossBR.png" alt="Messiah">
 	</div>
-	<div id="garrafa">
-		<img id="garrafaImg" src="./images/garrafa.png" alt="garrafa">
+	<div id="dinheiro">
+		<img id="dinheiroImg" src="./images/dinheiro.png" alt="dinheiro">
 	</div>
-	<div id="bottonIformacao22">
-		<p id="inf2">Caminhoneiros estão causando engarrafamento na BR, lute para conseguir chegar ao IF.</p>
+	<div id="motociata">
+		<img id="motociataImg" src="./images/motociata.png" alt="motociata">
+	</div>
+	<div id="bottonIformacao23">
+		<p id="inf3">Você chegou ao IFPE IGARASSU! Porém, algo está errado. Defenda o IFPE!</p>
 	</div>
 </div>
 
@@ -438,7 +453,7 @@
 	</div>
 	<div id="barraInformacoes">
 		<p class="nome">EstudanteIFPE</p>
-		<p class="nome">HP:{$Estudante.vida}</p>
+		<p class="nome">HP:</p>
 		<div class="contorno">
 			<div id="vidaEstudante"></div>
 		</div>
@@ -447,17 +462,20 @@
 		</div>
 	</div>
 	<div id="bottonIformacao">
-		<!-- <p id="inf2">nn</p> -->
+		<!-- <p id="inf3">nn</p> -->
 		<ul id="listaStatus">
 			<li>Nome: {$Estudante.nome}</li>
 			<li>Proeficiência: D20 + {$Estudante.baseAcerto}</li>
 			<li>Ataque: D10 + {$Estudante.ataque}</li>
 			<li>Defesa: {$Estudante.def}</li>
+			<li>Vida: 190</li>
 		</ul>
 		<div class="divAtaques">Murro</div>
 		<div class="divAtaques">Lanche da Tia</div>
 		<div class="divAtaques">'Vuadora'</div>
-		<div id="menuAtaques"></div>
+		<div id="menuAtaques">
+			<img id="mao" src="./images/hand.gif" alt="mãozinha">
+		</div>
 		<div id="fimBatalha">
 			<h1>YOU WIN!</h1>
 			<p> Os caminhoneiros seguiram viagem</p>

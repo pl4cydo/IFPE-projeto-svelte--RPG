@@ -6,36 +6,52 @@
 		display: flex;
 		position: relative;
 	}
-	#personagemBus2 {
+	#personagemBus3 {
+		/*border: 1px solid orange;*/
 		margin: 3px;
-		width: 200px;
-		height: 250px;
-		top: 115px;
-		left: 200px;
+		height: 300px;
+		top: 68px;
+		left: 150px;
 		position: absolute;
-		/*overflow: hidden;*/
+		overflow: hidden;
 		transition: 0.2s ease;
 		transform:rotateY(0deg) ;
 		display: flex;
 		justify-content: center;
 	}
-	#imagemCaminhoneiro {
-		width: 100%;
+	#imagemMessiah {
+		height: 100%;
+		transform: scaleX(-1);
 	} 
-	#garrafa {
-		top: 160px;
-		left: 270px;
+	#dinheiro{
+		top: 250px;
+		left: 600px;
 		position: absolute;
 		transition: 0.4s ease;
 		visibility: hidden;
 	}
-	#garrafaImg {
-		height: 120px;
+	#dinheiroImg {
+		height: 90px;
 		position: absolute;
 
 	}
-
-	#barraInformacoesBus2 {
+	#motociata {
+		position: absolute;
+		border: 1px solid red;
+		width: 880px;
+		height: 370px;
+		overflow: hidden;
+	}
+	#motociataImg{
+		height: 100%;
+		transform: scaleX(-1);
+		position: absolute;
+		top: 15px;
+		left: -660px;
+		visibility: hidden;
+		transition: 3.0s ease;
+	}
+	#barraInformacoesBus3 {
 		/*border: 1px solid black;*/
 		margin: 3px;
 		width: 200px;
@@ -46,25 +62,25 @@
 		visibility: hidden;
 		color: white;
 	}
-	.contornoBus2 {
+	.contornoBus3 {
 		width: 194px;
 		height: 30px;
 		border: 2px solid;
 		border-color: white;
 		border-radius: 3px;
 	}
-	#barraVidaBus2 {
+	#barraVidaBus3 {
 		width: 194px;
 		height: 30px;
 		background-color: green;
 		transition: 1.0s ease;
 	}
-	.nomeBus2 {
+	.nomeBus3 {
 		margin: 5px;
 		width: 250px;
 
 	}
-	#bottonIformacao22 {
+	#bottonIformacao23 {
 		/*width: 420px;*/
 		width: 855px;
 		height: 170px;
@@ -85,7 +101,7 @@
 
 	/*	visibility: hidden;*/
 	}
-	#inf2 {
+	#inf3 {
 		margin-left: 15px;
 	}
 /************************* ESTUDANTE IFPE ************************ */
@@ -222,8 +238,13 @@
 		width: 150px;
 		height: 35px;
 		position: absolute;
-		border: 5px solid;
+		/*border: 5px solid;
 		border-radius: 7px;
 		border-color: cyan;
-		box-shadow:  3px 3px grey;
+		box-shadow:  3px 3px grey;*/
+	}
+	#mao {
+		height: 130%;
+		margin-top: 0px;
+		margin-left: -30px;
 	}

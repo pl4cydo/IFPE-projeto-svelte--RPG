@@ -1,5 +1,5 @@
 <script>
-	import Batalha2 from "./Batalha2.svelte"
+	import Batalha3 from "./Batalha3.svelte"
 </script>
 
-<Batalha2/>
+<Batalha3/>
