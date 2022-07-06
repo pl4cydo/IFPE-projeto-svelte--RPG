@@ -51,6 +51,21 @@
 		visibility: hidden;
 		transition: 3.0s ease;
 	}
+	#codando {
+		position: absolute;
+		height: 100%;
+		left: 100px;
+		top: -370px;
+		transition: 5.0s ease;
+	}
+	#allan {
+		position: absolute;
+		height: 70%;
+		top: 110px;
+		left: 850px;
+		transform: rotate(-35deg);
+		transition: 3.0s ease;
+	}
 	#barraInformacoesBus3 {
 		/*border: 1px solid black;*/
 		margin: 3px;

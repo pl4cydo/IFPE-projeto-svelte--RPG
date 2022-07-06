@@ -71,7 +71,7 @@
 	function ataqueAleatorio() {
 		let aleatorio = Math.round(Math.random()*10)
 		if ($Messiah.vidaCarlos > 0) {
-			if (aleatorio < 1) {
+			if (aleatorio < 6) {
 				inf3.innerHTML = $Messiah.nome + " Tentou Cortar a Verba"
 				setTimeout(function(){
 					corteVerba()
@@ -88,7 +88,7 @@
 	function corteVerba() {
 		let acerto = Math.round(Math.random()*20) + $Messiah.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Messiah.ataque + 10; //15
+			let dano = Math.round(Math.random()*20) + $Messiah.ataque + 20 ; //15
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf3.innerHTML = $Messiah.nome + " Cortou sua verba e causou " + dano + " de dano"
@@ -232,7 +232,7 @@
 		inf3.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Messiah.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20; //20
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20 - $Messiah.def; //20
 			setTimeout(function(){
     			inf3.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Messiah.vidaCarlos -= dano;
@@ -286,8 +286,8 @@
 	let vidaAtual = $Estudante.vida;
 	function curaEstudante() {
 		if (contadorCura == 0) {
-			inf3.innerHTML = $Estudante.nome + "comeu um lanche e recuperou vida"
-			let cura = Math.round(0.3 * vidaAtual)
+			inf3.innerHTML = $Estudante.nome + " Almoçou"
+			let cura = Math.round(0.5 * vidaAtual)
 			if ((cura + $Estudante.vida) > 194) {
 				$Estudante.vida = 194
 			} else {
@@ -295,13 +295,13 @@
 			}
 			movimentoCura()
 			setTimeout(function(){
-				inf3.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+				inf3.innerHTML = $Estudante.nome + " curou 50% do HP"
 				vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
 			contadorPower++
 			manaCor()
 		} else {
-			inf3.innerHTML = "Opa! a bolsa permanência é para a passagem. Um lanche por dia!"
+			inf3.innerHTML = "Opa! um almoço por dia, a carne ta cara!"
 		}
 		setTimeout(function(){
     		inf3.innerHTML = "Fim do turno"
@@ -326,46 +326,47 @@
 		if (contadorPower == 0) {
 			mana.style.width = "0%"
 		} else if (contadorPower == 1) {
-			mana.style.width = "25%"
+			mana.style.width = "20%"
 		} else if (contadorPower == 2) {
-			mana.style.width = "50%"
+			mana.style.width = "40%"
 		} else if (contadorPower == 3) {
-			mana.style.width = "75%"
+			mana.style.width = "60%"
 		} else if (contadorPower == 4) {
+			mana.style.width = "80%"
+		} else if (contadorPower == 5) {
 			mana.style.width = "100%"
 		}
 	}
 	function carregarPower() {
-		if (contadorPower < 4) {
-			inf3.innerHTML = "Falta energia, use outro movimento nesse turno."
+		if (contadorPower < 5 || $Estudante.vida > 97) { // || $Estudante.vida > 97
+			inf3.innerHTML = "As condições não são favoráveis!"
 		} else {
 			power()
 		}
 	}
 
 	function power() {
-		inf3.innerHTML = $Estudante.nome + " tomou distância"
+		inf3.innerHTML = $Estudante.nome + " pediu ajuda ao CodeMaster"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 3;
 		if (acerto >= $Messiah.def){
 			let dano = Math.round(Math.random()*20) + $Estudante.ataque + 50;
 			setTimeout(function(){
 				$Messiah.vidaCarlos -= dano;
-    			inf3.innerHTML = $Estudante.nome + " acertou uma 'Vuadora' com " + dano + " de dano"
+    			inf3.innerHTML = "O CodeMaster surgiu e deu " + dano + " de dano"
     			if ($Messiah.vidaCarlos < 0) {
 					barraVidaBus3.style.width = "0px"
 				} else {
-					barraVidaBus3.style.width = $Messiah.vidaCarlos + "px"
+					setTimeout(function() {
+						barraVidaBus3.style.width = $Messiah.vidaCarlos + "px"
+					}, 3000);
 				}
     			movimentoPower() 
 			},4000);
 		} else {
 			setTimeout(function(){
-    			inf3.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
+    			inf3.innerHTML = $Estudante.nome + "não teve ajuda"
 			},4000);
 		}
-		// setTimeout(function(){
-  //   		inf3.innerHTML = "Fim do turno"
-		// },7000);
 		setTimeout(function(){
 			if ($Messiah.vidaCarlos <= 0) {
 				console.log("opa")
@@ -376,33 +377,31 @@
     					fim()
     				},6000);
 			}
-		},5000);
+		},6000);
 		setTimeout(function(){
-    			ataqueAleatorio()
-		},7000);
+    		ataqueAleatorio()
+		},10000);
 		bottonIformacao.style.visibility = "hidden"
 		contadorPower = 0;
 		manaCor()
-		trocarTurno()
+		setTimeout(function() {
+			trocarTurno()
+		},3000);
 	} 
 	function movimentoPower() {
-		personagem.style.left = "-100px"
-		personagem.style.transform = "rotate(55deg)"
-		personagem.style.top = "130px"
-
+		   allan.style.left = "670px"
 		setTimeout(function(){
-    		personagemBus3.style.top = "190px"
+		    codando.style.top = "600px"
+		},1000);
+		setTimeout(function(){
+			personagemBus3.style.top = "190px"
     		personagemBus3.style.transform = "rotate(5deg)"
-		},500);
+		},2000);
 		setTimeout(function(){
-			personagemBus3.style.top = "115px"
+			allan.style.left = "850px"
+			personagemBus3.style.top = "68px"
 			personagemBus3.style.transform = "rotate(0deg)"
-		},700);
-		setTimeout(function(){
-			personagem.style.left = "100px"
-			personagem.style.top = "230px"
-			personagem.style.transform = "rotate(0deg)"
-		},250);	
+		},3000);	
 	} 
 	
 
@@ -438,6 +437,8 @@
 	</div>
 	<div id="motociata">
 		<img id="motociataImg" src="./images/motociata.png" alt="motociata">
+		<img id="codando" src="./images/chuva.png" alt="matrix">
+		<img id="allan" src="./images/Allan2.png" alt="allan">
 	</div>
 	<div id="bottonIformacao23">
 		<p id="inf3">Você chegou ao IFPE IGARASSU! Porém, algo está errado. Defenda o IFPE!</p>
@@ -471,14 +472,14 @@
 			<li>Vida: 190</li>
 		</ul>
 		<div class="divAtaques">Murro</div>
-		<div class="divAtaques">Lanche da Tia</div>
-		<div class="divAtaques">'Vuadora'</div>
+		<div class="divAtaques">Almoço</div>
+		<div class="divAtaques">Cheirinho</div>
 		<div id="menuAtaques">
 			<img id="mao" src="./images/hand.gif" alt="mãozinha">
 		</div>
 		<div id="fimBatalha">
 			<h1>YOU WIN!</h1>
-			<p> Os caminhoneiros seguiram viagem</p>
+			<p> Parabéns! Você defendeu o IFPE por mais um dia! Obrigado por jogar!</p>
 		</div>
 	</div>
 </div>
