@@ -39,10 +39,11 @@
 	       		} else if (menuEixoY == 454) {
 	       			curaEstudante()
 	       		} else if (menuEixoY == 509) {
-	       			power()
+	       			carregarPower()
+	       			// power()
 	       		} 
 	       	}
-       		// alert("ENTER")
+       		// alert("SPACE")
        		// entrarAtaque()
        	  break;
     		}
@@ -87,7 +88,7 @@
 	function tapa() {
 		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 15; //15
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 5; //15
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Tapa com " + dano + " de dano"
@@ -368,9 +369,9 @@
     			inf2.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
 			},4000);
 		}
-		setTimeout(function(){
-    		inf2.innerHTML = "Fim do turno"
-		},7000);
+		// setTimeout(function(){
+  //   		inf2.innerHTML = "Fim do turno"
+		// },7000);
 		setTimeout(function(){
 			if ($Caminhoneiro.vidaCarlos <= 0) {
 				console.log("opa")
@@ -384,7 +385,7 @@
 		},5000);
 		setTimeout(function(){
     			ataqueAleatorio()
-		},5000);
+		},7000);
 		bottonIformacao.style.visibility = "hidden"
 		contadorPower = 0;
 		manaCor()

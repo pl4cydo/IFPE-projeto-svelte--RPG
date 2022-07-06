@@ -98,3 +98,20 @@ body {
 		font: 12pt message-box;
 		margin-right: 0;
 	}
+	#devDiv {
+		height: 450px;
+		position: absolute-inline;
+		width: 200px;
+		border: 1px solid black;
+		margin-top: -525px;
+		margin-left: 699px;
+		visibility: hidden;
+
+	}
+	.listaDev {
+		margin: 30px;
+		margin-left: 0;
+	}
+	.listaDev:hover {
+		color: red;
+	}

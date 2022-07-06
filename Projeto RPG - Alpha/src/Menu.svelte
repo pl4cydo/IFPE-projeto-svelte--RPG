@@ -1,7 +1,28 @@
 <script type="text/javascript">
-	import Dev from "./Dev.svelte"
 	import { estado } from './Contents/Estado.js'
 	import { trocarEstadoDoJogo } from './Contents/Estado.js'
+
+	document.onkeydown = function(event) {
+    	if (event.keyCode == (75)) {
+       		hiddeDev()
+        }
+    }
+    function hiddeDev() {
+    	trocarDevson() 
+    	if (devson == true) {
+    		devDiv.style.visibility = "visible"
+    	} else if (devson == false) {
+    		devDiv.style.visibility = "hidden"
+    	}
+    }
+    let devson = false;
+    function trocarDevson() {
+    	if (devson == true) {
+    		devson = false
+    	} else {
+    		devson = true
+    	}
+    }
 </script>
 
 <link rel="stylesheet" type="text/css" href="./styles/menu.css">
@@ -24,6 +45,14 @@
 			<div class="projeto">
 				<h1>Demo Week 2022.1</h1>
 			</div>
+			<div id="devDiv">
+				<ul>
+					<p>DEV MODE</p>
+					<li class="listaDev" on:click={() => trocarEstadoDoJogo('jogar')}>MAPA-I</li>
+					<li class="listaDev" on:click={() => trocarEstadoDoJogo('mapa2')}>MAPA-II</li>
+					<li class="listaDev" on:click={() => trocarEstadoDoJogo('mapa3')}>MAPA-III</li>
+				</ul>
+        	</div>
 		</div>
 	</div>
 </main>

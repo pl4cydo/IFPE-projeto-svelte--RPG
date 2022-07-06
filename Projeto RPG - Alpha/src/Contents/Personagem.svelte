@@ -215,7 +215,7 @@
 	
 	function murro() {
 		inf.innerHTML = $Estudante.nome + " atacou com Murro"
-		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
+		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto + 5;
 		if (acerto >= $Bus.def){
 			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 10; //10
 			setTimeout(function(){
@@ -347,9 +347,9 @@
     			inf.innerHTML = $Estudante.nome + " caiu no meio-fio e passou longe."
 			},4000);
 		}
-		setTimeout(function(){
-    		inf.innerHTML = "Fim do turno"
-		},7000);
+		// setTimeout(function(){
+  //   		inf.innerHTML = "Fim do turno"
+		// },7000);
 		setTimeout(function(){
 			if ($Bus.vidabus <= 0) {
 				imagemBus.style.transform = "rotate(180deg)"
@@ -361,7 +361,7 @@
 		},8000);
 		setTimeout(function(){
     			ataqueAleatorio()
-		},5000);
+		},7000);
 		bottonIformacao.style.visibility = "hidden"
 		contadorPower = 0;
 		manaCor()

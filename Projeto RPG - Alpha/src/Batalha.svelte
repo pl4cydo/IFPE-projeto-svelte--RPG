@@ -11,11 +11,7 @@
 		InicioBatalha.style.visibility = "hidden"
 		bottonIformacao2.style.width = "420px"
 		$estadoTurno = true;
-
-	}
-
-
-
+}
 </script>
 
 
