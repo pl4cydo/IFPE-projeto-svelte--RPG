@@ -283,7 +283,7 @@
 			}
 			movimentoCura()
 			setTimeout(function(){
-				inf.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+				inf.innerHTML = $Estudante.nome + " curou 30% do HP"
 
 				vidaEstudante3.style.width = $Estudante.vida + "px"
 			},2000);
@@ -412,7 +412,7 @@
 <div class="bloco">
 	<div id="barraInformacoesBus">
 		<p class="nomeBus">{$Bus.nome}</p>
-		<p class="nomeBus">HP:{$Bus.vidabus}</p>
+		<p class="nomeBus">HP:</p>
 		<div class="contornoBus">
 			<div  id="barraVidaBus"></div>
 		</div>	
@@ -434,7 +434,7 @@
 	</div>
 	<div id="barraInformacoes">
 		<p class="nome">EstudanteIFPE</p>
-		<p class="nome">HP:{$Estudante.vida}</p>
+		<p class="nome">HP:</p>
 		<div class="contorno">
 			<div id="vidaEstudante3"></div>
 		</div>

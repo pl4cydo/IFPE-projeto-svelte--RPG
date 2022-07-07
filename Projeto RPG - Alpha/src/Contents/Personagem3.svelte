@@ -2,7 +2,7 @@
 	import { Estudante } from "./Vida3.js"
 	import { Messiah } from "./Vida3.js"
 	import { estadoTurno } from "./Vida3.js"
-	// import { trocarEstadoDoJogo } from './Estado.js'
+	import { trocarEstadoDoJogo } from './Estado.js'
 
 
 	// MENU BATALHA
@@ -235,7 +235,6 @@
 		setTimeout(function(){
     		inf3.innerHTML = "Fim do turno"
 		},6000);	
-		contadorCura++
 		setTimeout(function(){
 			if ($Estudante.vida > 0) {
     			bottonIformacao.style.visibility = "visible"

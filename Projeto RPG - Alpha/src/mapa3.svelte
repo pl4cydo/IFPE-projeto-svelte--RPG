@@ -66,7 +66,7 @@ document.onkeydown = function(event) {
 	function entrarBatalha1() {
 		if (eixoY == 60 && eixoX == 489) {
 			// alert('enter')
-			trocarEstadoDoJogo('batalha2')
+			trocarEstadoDoJogo('batalha3')
         }
 	}
 

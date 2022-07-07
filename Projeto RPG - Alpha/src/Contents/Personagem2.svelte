@@ -237,7 +237,7 @@
 		inf2.innerHTML = $Estudante.nome + " atacou com Murro"
 		let acerto = Math.round(Math.random()*20) + $Estudante.baseAcerto;
 		if (acerto >= $Caminhoneiro.def){
-			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 20; //20
+			let dano = Math.round(Math.random()*10) + $Estudante.ataque + 12; //15
 			setTimeout(function(){
     			inf2.innerHTML = $Estudante.nome + " Acertou um Murro com " + dano + " de dano"
 				$Caminhoneiro.vidaCarlos -= dano;
@@ -301,7 +301,7 @@
 			}
 			movimentoCura()
 			setTimeout(function(){
-				inf2.innerHTML = $Estudante.nome + " curou 30% do HP atual"
+				inf2.innerHTML = $Estudante.nome + " curou 30% do HP"
 				vidaEstudante.style.width = $Estudante.vida + "px"
 			},2000);
 			contadorPower++
@@ -431,7 +431,7 @@
 <div class="bloco2">
 	<div id="barraInformacoesBus2">
 		<p class="nomeBus2">{$Caminhoneiro.nome}</p>
-		<p class="nomeBus2">HP:{$Caminhoneiro.vidaCarlos}</p>
+		<p class="nomeBus2">HP:</p>
 		<div class="contornoBus2">
 			<div  id="barraVidaBus2"></div>
 		</div>	
@@ -456,7 +456,7 @@
 	</div>
 	<div id="barraInformacoes">
 		<p class="nome">EstudanteIFPE</p>
-		<p class="nome">HP:{$Estudante.vida}</p>
+		<p class="nome">HP:</p>
 		<div class="contorno">
 			<div id="vidaEstudante"></div>
 		</div>

@@ -5,6 +5,7 @@
 	import Mapa3 from "./mapa3.svelte"
 	import Batalha1 from "./Batalha.svelte"
 	import Batalha2 from "./Batalha2.svelte"
+	import Batalha3 from "./Batalha3.svelte"
 	import { estado } from './Contents/Estado.js'
 	import Sobre from "./sobre.svelte"
 </script>
@@ -22,6 +23,8 @@
 	<Batalha1/>
 {:else if $estado === 'batalha2'}
 	<Batalha2/>
+{:else if $estado === 'batalha3'}
+	<Batalha3/>
 {:else if $estado === 'sobre'}
 	<Sobre/>
 {/if}
