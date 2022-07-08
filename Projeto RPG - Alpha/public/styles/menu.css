@@ -12,10 +12,13 @@ body {
 		position: absolute;
 	}
 	.bloco {
+		color: snow;
 		padding: 0;
 		margin-top: 0;
-		border: 1px solid;
-		border-color: darkcyan;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
 		width: 900px;
 		height: 600px;
 		justify-content: center;
@@ -23,9 +26,7 @@ body {
 	}
 	.titulo {
 		padding: 0;
-		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		margin-top: 50px;
 		width: 400px;
 		height: 300px;
 		margin-left: 250px;
@@ -35,17 +36,19 @@ body {
 		margin-left: 100px;
 		margin-bottom: 0;
 		font: 50pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.titulo h3 {
 		margin-top: 10px;
 		margin-left: 40px;
 		font: 20pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.jogar {
 		padding: 0;
 		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		/*border: 1px solid;
+		border-color: darkcyan;*/
 		width: 300px;
 		height: 50px;
 		margin-left: 300px
@@ -54,40 +57,52 @@ body {
 		margin-top: 10px;
 		margin-left: 100px;
 		font: 20pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
+	.jogar h1:hover{
+		color:  black;
 	}
 	.ajuda {
 		padding: 0;
 		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		/*border: 1px solid;
+		border-color: darkcyan;*/
 		width: 300px;
 		height: 50px;
-		margin-left: 300px
+		margin-left: 300px;
 	}
 	.ajuda h1 {
 		margin-top: 10px;
 		margin-left: 100px;
 		font: 20pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
+	.ajuda h1:hover{
+		color:  black;
 	}
 	.sobre {
 		padding: 0;
 		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+	/*	border: 1px solid;
+		border-color: darkcyan;*/
 		width: 300px;
 		height: 50px;
-		margin-left: 300px
+		margin-left: 300px;
 	}
 	.sobre h1 {
 		margin-top: 10px;
 		margin-left: 100px;
 		font: 20pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
+	.sobre h1:hover{
+		color:  black;
 	}
 	.projeto {
 		padding: 0;
 		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		/*border: 1px solid;
+		border-color: darkcyan;*/
 		width: 300px;
 		height: 50px;
 		margin-left: 590px
@@ -97,6 +112,7 @@ body {
 		margin-left: 140px;
 		font: 12pt message-box;
 		margin-right: 0;
+		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	#devDiv {
 		height: 450px;

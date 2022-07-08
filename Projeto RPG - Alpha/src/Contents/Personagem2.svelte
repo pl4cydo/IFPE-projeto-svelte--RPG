@@ -4,6 +4,8 @@
 	import { estadoTurno } from "./Vida2.js"
 	import { trocarEstadoDoJogo } from './Estado.js'
 
+	var audioBatalha2 = new Audio('./music/batalha2.mp3');
+	audioBatalha2.play();
 
 	// MENU BATALHA
 	function trocarTurno() {
@@ -224,7 +226,8 @@
 		},4000);
 		$estadoTurno = false;
 		setTimeout(function(){
-    			 location.reload();
+				audioBatalha2.stop()
+    			location.reload();
 		},10000);
 	}
 
@@ -419,6 +422,7 @@
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
+			audioBatalha2.stop()
     		trocarEstadoDoJogo('mapa3')
 		},5000);
 	}

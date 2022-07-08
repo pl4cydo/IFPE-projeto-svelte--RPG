@@ -4,6 +4,7 @@
 	import { Bus } from "./Contents/Vida.js"
 	import { estadoTurno } from "./Contents/Vida.js"
 	
+
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
 		bottonIformacao.style.visibility = "visible"

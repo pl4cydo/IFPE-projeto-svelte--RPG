@@ -10,7 +10,8 @@ body {
 	color: #333;
 	margin: 0;
 	padding: 8px;
-	box-sizing: border-box;
+	 b background: rgb(42,140,130);
+background: linear-gradient(309deg, rgba(42,140,130,1) 9%, rgba(65,191,179,1) 51%, rgba(155,242,234,1) 100%); 
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 

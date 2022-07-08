@@ -5,6 +5,7 @@
 	document.onkeydown = function(event) {
     	if (event.keyCode == (75)) {
        		hiddeDev()
+       		audio.pause();
         }
     }
     function hiddeDev() {
@@ -23,6 +24,12 @@
     		devson = true
     	}
     }
+    var audio = new Audio('./music/musicMenu.mp3');
+	audio.play();
+	function iniciarParando() {
+		trocarEstadoDoJogo('jogar');
+		audio.pause();
+	}
 </script>
 
 <link rel="stylesheet" type="text/css" href="./styles/menu.css">
@@ -31,9 +38,10 @@
 		<div class="bloco">
 			<div class="titulo">
 				<h1>FINAL<br>IFPE</h1>
+				<br>
 				<h3>Uma Jornada Esperada</h3>
 			</div>
-			<div class="jogar" on:click={() => trocarEstadoDoJogo('jogar')}>
+			<div class="jogar" on:click={() => iniciarParando()}>
 				<h1>JOGAR</h1>
 			</div>
 			<div class="ajuda" on:click={() => trocarEstadoDoJogo('ajuda')}>

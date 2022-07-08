@@ -8,6 +8,7 @@
 	import Batalha3 from "./Batalha3.svelte"
 	import { estado } from './Contents/Estado.js'
 	import Sobre from "./sobre.svelte"
+	import Ajuda from "./ajuda.svelte"
 </script>
 
 
@@ -27,4 +28,6 @@
 	<Batalha3/>
 {:else if $estado === 'sobre'}
 	<Sobre/>
+{:else if $estado === 'ajuda'}
+	<Ajuda/>
 {/if}

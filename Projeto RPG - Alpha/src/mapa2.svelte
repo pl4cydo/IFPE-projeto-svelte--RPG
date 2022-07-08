@@ -2,6 +2,9 @@
 import { estado } from './Contents/Estado.js'
 import { trocarEstadoDoJogo } from './Contents/Estado.js'
 
+var audioMap2 = new Audio('./music/mapa2.mp3');
+audioMap2.play();
+
 document.onkeydown = function(event) {
     switch (event.keyCode) {
        case 37:
@@ -66,6 +69,7 @@ document.onkeydown = function(event) {
 	function entrarBatalha1() {
 		if ((eixoY == 228 || eixoY == 284) && eixoX == 327) {
 			// alert('enter')
+			audioMap2.pause()
 			trocarEstadoDoJogo('batalha2')
         }
 	}

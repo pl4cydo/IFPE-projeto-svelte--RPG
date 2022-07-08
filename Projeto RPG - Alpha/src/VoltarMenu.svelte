@@ -8,15 +8,17 @@
 
 <style type="text/css">
 	.voltar {
+		position: absolute;
 		padding: 0;
-		margin-top: 15px;
-		border: 1px solid;
-		border-color: darkcyan;
+		top: 550px;
+		left: 590px;
 		width: 300px;
 		height: 50px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 300px
+		margin-left: 300px;
+		text-shadow: black 0.1em 0.1em 0.2em;
+		color: snow;
 	}
 </style>

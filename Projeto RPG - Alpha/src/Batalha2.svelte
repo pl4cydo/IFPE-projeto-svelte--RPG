@@ -3,7 +3,8 @@
 	import { Estudante } from "./Contents/Vida2.js"
 	import { Caminhoneiro } from "./Contents/Vida2.js"
 	import { estadoTurno } from "./Contents/Vida2.js"
-	
+
+
 	function iniciar() {
 		barraInformacoes.style.visibility = "visible"
 		bottonIformacao.style.visibility = "visible"
