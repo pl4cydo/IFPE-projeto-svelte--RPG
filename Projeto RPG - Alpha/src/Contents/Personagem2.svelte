@@ -226,7 +226,7 @@
 		},4000);
 		$estadoTurno = false;
 		setTimeout(function(){
-				audioBatalha2.stop()
+				audioBatalha2.pause()
     			location.reload();
 		},10000);
 	}
@@ -422,7 +422,7 @@
 		fimBatalha.style.visibility = "visible"
 		// $estadoTurno = false;
 		setTimeout(function(){
-			audioBatalha2.stop()
+			audioBatalha2.pause()
     		trocarEstadoDoJogo('mapa3')
 		},5000);
 	}

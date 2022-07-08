@@ -30,6 +30,14 @@
 		trocarEstadoDoJogo('jogar');
 		audio.pause();
 	}
+	function ajudaPause() {
+		trocarEstadoDoJogo('ajuda');
+		audio.pause();
+	}
+	function sobrePause() {
+		trocarEstadoDoJogo('sobre');
+		audio.pause();
+	}
 </script>
 
 <link rel="stylesheet" type="text/css" href="./styles/menu.css">
@@ -44,10 +52,10 @@
 			<div class="jogar" on:click={() => iniciarParando()}>
 				<h1>JOGAR</h1>
 			</div>
-			<div class="ajuda" on:click={() => trocarEstadoDoJogo('ajuda')}>
+			<div class="ajuda" on:click={() => ajudaPause()}>
 				<h1>AJUDA</h1>
 			</div>
-			<div class="sobre" on:click={() => trocarEstadoDoJogo('sobre')}>
+			<div class="sobre" on:click={() => sobrePause()}>
 				<h1>SOBRE</h1>
 			</div>
 			<div class="projeto">
