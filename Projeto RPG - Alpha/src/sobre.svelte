@@ -10,7 +10,7 @@
 			<p>
 					   Estudande de Informática para Internet - IFPE Igarassu-PE
 				<br /> Nome: Plácydo Lima
-				<br /> Residencia: Camaragibe-PE
+				<br /> Residência: Camaragibe-PE
 				<br />
 				<a href="https://www.linkedin.com/in/pl%C3%A1cydo-lima-49a179223/" target="_blank">LinkedIn</a> @plácydo-lima
 				<br /> <a href="https://github.com/pl4cydo" target="_blank">GitHub</a> @pl4cydo
@@ -19,12 +19,12 @@
 			<p>
 				<br /> Estudande de Informática para Internet - IFPE Igarassu-PE
 				<br /> Nome: Daniel Filipe
-				<br /> Residencia: Igarassu-PE
+				<br /> Residência: Igarassu-PE
 			</p>
 			<p>
 				<br /> Estudande de Informática para Internet - IFPE Igarassu-PE
 				<br /> Nome: Geneton Neto
-				<br /> Residencia: Paulista-PE
+				<br /> Residência: Paulista-PE
 				<br />
 				<a href="https://www.linkedin.com/in/geneton-neto/" target="_blank">LinkedIn</a> @geneton-neto
 				<br /> <a href="https://github.com/genetonneto" target="_blank">GitHub</a> @genetonneto
@@ -33,12 +33,12 @@
 			<p>
 				<br /> Estudande de Informática para Internet - IFPE Igarassu-PE
 				<br /> Nome: Breno Rafael
-				<br /> Residencia: Igarassua-PE
+				<br /> Residência: Igarassu-PE
 			</p>
 			<p>
 				<br /> Estudande de Informática para Internet - IFPE Igarassu-PE
 				<br /> Nome: Marlon Mateus
-				<br /> Residencia: Igarassua-PE
+				<br /> Residência: Igarassu-PE
 				<br /> <a href="https://github.com/Marlon99bit" target="_blank">GitHub</a> @Marlon99bit
 			</p>
 		</main>
@@ -54,8 +54,8 @@
 			<p>Canal CodeSpeedy: Detect Arrow Key Pressed in JavaScript with onkeydown and keyCode</p><a href="https://www.youtube.com/watch?v=4u7EnLWSUg0&list=PLAnQWjhxcCMA3wZVc3v7f908-rVLJLyO1&index=6" target="_blank">link</a><br>
 			<h2>TRILHA SONORA</h2>
 			<p>Pokémon Red & Blue(1996)</p>
-			<h2>Agradecimentos especias:</h2>
-			<p>Daniele Sarra - Pela ajuda e compreensão.</p> <br>
+			<h2>Agradecimentos especiais:</h2>
+			<p>Daniele Saara - Pela ajuda e compreensão.</p> <br>
 			<p>Anthony Richard - Pelo companheirismo e ideias.</p>
 			
 		</div>
