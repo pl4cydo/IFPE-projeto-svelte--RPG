@@ -45,9 +45,10 @@
 	<div class="container">
 		<div class="bloco">
 			<div class="titulo">
-				<h1>FINAL<br>IFPE</h1>
+				<h1 class="t1">FINAL</h1>
+				<h1 class="t2">IFPE</h1>
 				<br>
-				<h3>Uma Jornada Esperada</h3>
+				<h3>UMA JORNADA ESPERADA</h3>
 			</div>
 			<div class="jogar" on:click={() => iniciarParando()}>
 				<h1>JOGAR</h1>

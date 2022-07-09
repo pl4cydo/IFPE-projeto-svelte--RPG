@@ -8,10 +8,10 @@
 			<h1>AJUDA</h1>
 			<h2>COMO JOGAR</h2>
 			<h3>MAPAS:</h3>
-			  <h4>Use as SETAS do teclado para mover o Estudante no mapa e pressione ESPAÇO para selecionar as batalhas</h4>
+			  <h4>- Use as SETAS do teclado para mover o Estudante no mapa e pressione ESPAÇO para selecionar as batalhas</h4>
 			  	<h3>BATALHAS:</h3>
-			  <h4>Use o CURSOR do MOUSE para iniciar a batalha</h4>
-			  <h4>Use as SETAS do teclado para escolher entre as habilidades e pressione ESPAÇO para escolher qual usar</h4>
+			  <h4>- Use o CURSOR do MOUSE para iniciar a batalha</h4>
+			  <h4>- Use as SETAS do teclado para escolher entre as habilidades e pressione ESPAÇO para escolher qual usar</h4>
 			  <h3>Ao fim das batalhas espere que você será redirecioando para a próxima fase</h3>
 		</main>
 		<VoltarMenu/>
@@ -39,9 +39,9 @@
 	#mainSobre {
 		margin-top: -7px;
 		color: snow;
-		font: 10pt message-box;
+		font: 12pt message-box;
 		text-shadow: black 0.1em 0.1em 0.2em;
-		margin-left: 50px;
+		margin-left: 15px;
 	}
 	#mainSobre h3 {
 		margin-top: 40px;

@@ -31,17 +31,24 @@ body {
 		height: 300px;
 		margin-left: 250px;
 	}
-	.titulo h1 {
+	.t1 {
 		margin-top: 40px;
 		margin-left: 100px;
 		margin-bottom: 0;
 		font: 50pt message-box;
 		text-shadow: black 0.1em 0.1em 0.2em;
 	}
+	.t2 {
+		margin-top: 15px;
+		margin-left: 120px;
+		margin-bottom: 0;
+		font: 50pt message-box;
+		text-shadow: black 0.1em 0.1em 0.2em;
+	}
 	.titulo h3 {
-		margin-top: 10px;
-		margin-left: 40px;
-		font: 20pt message-box;
+		margin-top: 20px;
+		margin-left: 35px;
+		font: 18pt message-box;
 		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.jogar {
@@ -118,10 +125,10 @@ body {
 		height: 450px;
 		position: absolute-inline;
 		width: 200px;
-		border: 1px solid black;
 		margin-top: -525px;
 		margin-left: 699px;
 		visibility: hidden;
+		text-shadow: black 0.1em 0.1em 0.2em;
 
 	}
 	.listaDev {

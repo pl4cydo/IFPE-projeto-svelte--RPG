@@ -216,11 +216,10 @@
 	} 
 
 	let contadorCuraMessiah = 0;
-	let vidaAtualMessiah = $Messiah.vidaCarlos
 	function paoleite() {
 		if (contadorCuraMessiah < 2) {
 			inf3.innerHTML = $Messiah.nome + " comeu pão com leite condensado"
-			let cura = Math.round(0.3 * vidaAtualMessiah)
+			let cura = Math.round(0.5 * 194)
 			if ((cura + $Messiah.vidaCarlos) > 194) {
 				$Messiah.vidaCarlos = 194
 			} else {
@@ -329,11 +328,10 @@
 	} 
 
 	let contadorCura = 0;
-	let vidaAtual = $Estudante.vida;
 	function curaEstudante() {
 		if (contadorCura == 0) {
 			inf3.innerHTML = $Estudante.nome + " Almoçou"
-			let cura = Math.round(0.5 * vidaAtual)
+			let cura = Math.round(194/2)
 			if ((cura + $Estudante.vida) > 194) {
 				$Estudante.vida = 194
 			} else {
@@ -384,7 +382,7 @@
 		}
 	}
 	function carregarPower() {
-		if (contadorPower < 5) { // || $Estudante.vida > 97
+		if (contadorPower < 5 || $Estudante.vida > 97) { 
 			inf3.innerHTML = "As condições não são favoráveis!"
 		} else {
 			power()
@@ -404,7 +402,7 @@
 				} else {
 					setTimeout(function() {
 						barraVidaBus3.style.width = $Messiah.vidaCarlos + "px"
-					}, 3000);
+					}, 4000);
 				}
     			movimentoPower() 
 			},4000);
@@ -435,19 +433,24 @@
 		},3000);
 	} 
 	function movimentoPower() {
-		   allan.style.left = "670px"
+	   codando.style.visibility = "visible"
+	   allan.style.left = "670px"
 		setTimeout(function(){
 		    codando.style.top = "600px"
 		},1000);
 		setTimeout(function(){
 			personagemBus3.style.top = "190px"
     		personagemBus3.style.transform = "rotate(5deg)"
+    		codando.style.visibility = "hidden"
 		},2000);
 		setTimeout(function(){
 			allan.style.left = "850px"
 			personagemBus3.style.top = "68px"
 			personagemBus3.style.transform = "rotate(0deg)"
-		},3000);	
+		},3000);
+		setTimeout(function() {
+			codando.style.top = "-370px"
+		}, 5000);	
 	} 
 	
 

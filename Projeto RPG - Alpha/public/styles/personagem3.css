@@ -57,6 +57,7 @@
 		left: 100px;
 		top: -370px;
 		transition: 5.0s ease;
+		visibility: hidden;
 	}
 	#allan {
 		position: absolute;

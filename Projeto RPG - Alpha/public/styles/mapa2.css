@@ -141,6 +141,9 @@
 	#blocoMapa {
 		width: 762px;
 		height: 566px;
-		border: 1px solid purple;
+		border: 5px solid;
+		border-radius: 7px;
+		border-color: white;
+		box-shadow:  3px 3px grey;
 		position: absolute;
 	}
