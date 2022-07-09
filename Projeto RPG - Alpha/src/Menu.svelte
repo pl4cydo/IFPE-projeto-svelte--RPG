@@ -24,8 +24,10 @@
     		devson = true
     	}
     }
+    let audioboo = true
     var audio = new Audio('./music/musicMenu.mp3');
-	audio.play();
+    audio.play()
+
 	function iniciarParando() {
 		trocarEstadoDoJogo('jogar');
 		audio.pause();

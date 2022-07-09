@@ -64,10 +64,6 @@
 
 
 <style type="text/css">
-body {
-		padding: 0;
-		margin: 0;
-	}
 	.container {
 		width: 100%;
 		height: 100vh;
