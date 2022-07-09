@@ -53,7 +53,7 @@
 			<br>
 			<p>Canal CodeSpeedy: Detect Arrow Key Pressed in JavaScript with onkeydown and keyCode</p><a href="https://www.youtube.com/watch?v=4u7EnLWSUg0&list=PLAnQWjhxcCMA3wZVc3v7f908-rVLJLyO1&index=6" target="_blank">link</a><br>
 			<h2>TRILHA SONORA</h2>
-			<p>Pokémon Red & Blue(1986)</p>
+			<p>Pokémon Red & Blue(1996)</p>
 			<h2>Agradecimentos especias:</h2>
 			<p>Daniele Sarra - Pela ajuda e compreensão.</p> <br>
 			<p>Anthony Richard - Pelo companheirismo e ideias.</p>
