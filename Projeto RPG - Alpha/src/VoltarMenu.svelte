@@ -10,11 +10,10 @@
 	.voltar {
 		position: absolute;
 		padding: 0;
-		top: 550px;
-		left: 590px;
+		margin-top: 25px;
+		marfin-left: 900px;
 		width: 300px;
 		height: 50px;
-		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin-left: 300px;

@@ -30,7 +30,22 @@ body {
 		width: 400px;
 		height: 300px;
 		margin-left: 250px;
+		animation: animate 
+            3.5s linear infinite;
 	}
+ 	@keyframes animate {
+        0% {
+            opacity: 0.4;
+        }
+
+        50% {
+            opacity: 1.0;
+        }
+
+        100% {
+            opacity: 0.4;
+        }
+    }
 	.t1 {
 		margin-top: 40px;
 		margin-left: 100px;
@@ -67,7 +82,7 @@ body {
 		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.jogar h1:hover{
-		color:  black;
+		color:  cyan;
 	}
 	.ajuda {
 		padding: 0;
@@ -85,7 +100,7 @@ body {
 		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.ajuda h1:hover{
-		color:  black;
+		color:  cyan;
 	}
 	.sobre {
 		padding: 0;
@@ -103,7 +118,7 @@ body {
 		text-shadow: black 0.1em 0.1em 0.2em;
 	}
 	.sobre h1:hover{
-		color:  black;
+		color:  cyan;
 	}
 	.projeto {
 		padding: 0;
