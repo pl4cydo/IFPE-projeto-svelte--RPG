@@ -11,7 +11,7 @@
 			 <h3>BATALHAS:</h3>
 			  <h4>- Use o CURSOR do MOUSE para iniciar a batalha.</h4>
 			  <h4>- Use as SETAS do teclado para escolher entre as habilidades e pressione ESPAÇO para escolher qual usar.</h4>
-			  <h3>*Ao fim das batalhas espere que você será redirecioando para a próxima fase.</h3>
+			  <h3>*Ao fim das batalhas espere que você será redirecionado para a próxima fase.</h3>
 		</main>
 		<div class='voltar' on:click={() => trocarEstadoDoJogo('menu')}>
 			Voltar ao menu

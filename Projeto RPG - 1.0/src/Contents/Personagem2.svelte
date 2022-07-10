@@ -90,7 +90,7 @@
 	function tapa() {
 		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 5; //15
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 10; //15
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " Acertou um Tapa com " + dano + " de dano"
@@ -154,7 +154,7 @@
 	function jogarGarrafa() {
 		let acerto = Math.round(Math.random()*20) + $Caminhoneiro.baseAcerto
 		if (acerto >= $Estudante.def) {
-			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 20;
+			let dano = Math.round(Math.random()*20) + $Caminhoneiro.ataque + 25;
 			$Estudante.vida -= dano
 			setTimeout(function(){
     			inf2.innerHTML = $Caminhoneiro.nome + " deu-lhe uma garrafada e causou " + dano + " de dano"
