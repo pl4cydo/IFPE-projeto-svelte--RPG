@@ -1,5 +1,5 @@
-# Projeto de Conclusão Lógica de Programação RPG
-#### Projeto Supervisionado pelo professor de Lógica da programação Allan Lima do IFPE Igarassu - Apresentado na Demo Week 2022.1
+# Projeto de Conclusão Lógica de Programação
+#### Projeto RPG - Supervisionado pelo professor de Lógica da programação Allan Lima do IFPE Igarassu - Apresentado na Demo Week 2022.1
 
 ## FINAL IFPE: Uma Jornada Esperada
 O jogo foi totalmente construído em SVELTE, usando conceitos e aprendidos durante as aulas e inspirações de que estão citadas na parte SOBRE do projeto.
